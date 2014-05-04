@@ -1,0 +1,55 @@
+.slider
+{
+	width: 600px;
+	height: 400px;
+	position: relative;
+	outline: 1px solid lightGrey;
+	margin: 35px auto 6px;
+
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.inside-pic
+{
+	width: inherit;
+	height: inherit;
+	position:absolute;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+
+}
+.global-preloader{
+	position:absolute;
+	background-color: red;
+	opacity: .3;
+	height: 7px;
+
+	bottom:0;
+	left:0;
+	width: 100%;
+}
+
+.preloader{
+	background-color: blue;
+	height: 7px;
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+.last-slide-btn{
+	position: relative;
+	width:600px;
+	margin:0 auto;
+	text-align: right;
+	font-family: 'Lato' serif;
+	letter-spacing: 1px;
+	font-weight: 300;
+	font-style: italic;
+	text-decoration: underline;
+	font-size: 18px;
+	color: rgb(230, 102, 17);
+	margin-bottom:15px;
+	cursor: pointer;
+}

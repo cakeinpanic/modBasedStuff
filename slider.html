@@ -1,0 +1,25 @@
+<!doctype html>
+<meta charset="utf-8">
+ <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<title>Slider</title>
+<link rel="stylesheet" type="text/css" href="style/globalStyle.css">
+<link rel="stylesheet" type="text/css" href="style/sliderStyle.css">
+<body>
+	<div class="wrapper">
+		<div slider class="slider" slides="http://www.mirkrasiv.ru/images/articles/fauna/wombat/wombat-013.jpg,http://ic.pics.livejournal.com/my19edwin/28036223/1631043/original.jpg,http://supercoolpics.com/wp-content/uploads/2013/08/supercoolpics_06_09082013122508.jpg,http://jevayaplaneta.ru/wp-content/uploads/2012/02/363760015737-610x504.jpg" datamap="http://1.bp.blogspot.com/-nkMzFQvJEhI/T4y9nIgiACI/AAAAAAAABGg/3blEVEmLYJA/s1600/Wombat+Thumbs+up72.jpg" globalpreloader="global-preloader" preloader="preloader">
+		</div>
+		<div class="last-slide-btn">Show me last slide</div>
+		<div class="description">
+			<iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=cakeinpanic&repo=modBasedStuff&type=watch" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
+  			<span>Image slider based on <a href="https://github.com/dfcreative/mod/">dfcreative's mod</a>.</span><br>Slideshow starts on mouse rolled over. Whem mouse is out – slideshow returns to first image.<br> Standart functional is extended by "show me last slide" option with external manage (it is useful if you want to add some special last slide and it's suposed to be optional.)<br><br>
+  			<a href="index.html">watch other stuff based on Mod</a>
+  	</div>
+
+	</div>
+</body>
+<script type="text/javascript">
+	$(document).on("mouseenter", ".btn", function() { $('.slider')[0].showLast(); });
+	$(document).on("mouseleave", ".btn", function() { $('.slider')[0].resetToNormal(); });
+</script>
+<script src="js/mod.min.js" type="text/javascript"> </script>
+<script src="js/slider.js" type="text/javascript"> </script>
