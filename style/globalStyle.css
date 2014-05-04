@@ -40,6 +40,16 @@ body{
 	margin:0 auto;
 	background-color: rgb(24, 23, 23);
 }
+.index-description
+{
+	position:absolute;
+	top:50px;
+	padding: 40px 40px 100px;
+	left:50px;
+	right: 50px;
+
+
+}
 .countdown-descripton{
 	margin-top:50px;
 }
@@ -51,5 +61,13 @@ body{
 	font-weight: 400;
 	display:block;
 	font-size:20px;
+}
+.index-img
+{
+	width:150px;
+	height:150px;
+	position:absolute;
+	bottom:20px;
+	right:10px;
 }
 
