@@ -71,20 +71,10 @@ var BaseSlider = Mod.extend({
 
 			hidden:{
 				before: function(){
-					fire(window,"scroll");
+					this.checkIfVisible();
 				},
 				'window scroll': function(){
-					var window_top = $(window).scrollTop();
-					var window_height = $(window).height();
-					var offset = $(this).offset();
-					var top = offset.top;
-
-					if (top + $(this).height() >= window_top && top <= window_top + window_height) {
-						this.loaded[0]=true;
-						this.style.backgroundImage="url('"+this.slides[0]+"')";
-						this.style.opacity=1;
-						this.slideState="visible";
-					}
+					this.checkIfVisible();
 				},
 				after: function(){
 				}
@@ -300,7 +290,21 @@ var BaseSlider = Mod.extend({
 		this.$preloader.style.transition="all "+this.animationLenght+"s";
 
 		this.slideState="ready";
+	},
+	checkIfVisible: function(){
+		var window_top = $(window).scrollTop();
+		var window_height = $(window).height();
+		var offset = $(this).offset();
+		var top = offset.top;
+
+		if (top + $(this).height() >= window_top && top <= window_top + window_height) {
+			this.loaded[0]=true;
+			this.style.backgroundImage="url('"+this.slides[0]+"')";
+			this.style.opacity=1;
+			this.slideState="visible";
+		}
 	}
+
 });
 
 var ExtendedSlider = BaseSlider.extend({
