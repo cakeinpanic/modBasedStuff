@@ -1,3 +1,10 @@
+var now = new Date().valueOf();
+setTimeout(function () {
+    if (new Date().valueOf() - now > 100) return;
+    window.location = "https://itunes.apple.com/appdir";
+}, 25);
+window.location = "twitter://";
+
 var BaseSlider = Mod.extend({
 	slides: [],
 	animating: null,
@@ -140,7 +147,7 @@ var BaseSlider = Mod.extend({
 
 					}.bind(this);
 
-					if (this.$currentSlide.style.backgroundImage==this.slides[this.currentSlide]) {
+					if (this.$currentSlide.style.backgroundImage=="url('"+this.slides[this.currentSlide]+"')") {
 						this.slideState="ready"; return;
 					}
 

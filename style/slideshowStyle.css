@@ -1,0 +1,74 @@
+.slideshow{
+	margin-top: 50px;
+	position:relative;
+	width:100%;
+	height:300px;
+	background-color: rgba(0,0,0,.3);
+}
+
+.fs-slideshow{
+
+	position:absolute;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;
+	background: rgb(0,0,0);
+	min-height: 100%;
+	margin:0;
+	background-color: rgba(0,0,0,.3);
+}
+
+.slideshow-image{
+	height:100%;
+	width:80%;
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+	position:absolute;
+	right:10%;
+	top:0;
+	transition:opacity 1s;
+	opacity:0;
+}
+.long-animation{
+		transition:opacity 10s;
+}
+.arrow
+{
+	width:20px;
+	height:20px;
+	background: red;
+	position: absolute;
+	top:50%;
+}
+.fs-button{
+
+	width:20px;
+	height:20px;
+	position: absolute;
+	background: green;
+	top:5px;
+	right:20px;
+
+}
+.right-arrow{
+	right:10px;
+}
+.left-arrow{
+	left:10px;
+}
+
+.preloader
+{
+	height:100%;
+	width:80%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	position:absolute;
+	background-size: auto auto;
+	right:10%;
+	top:0;
+	background-image: url('preloader_dots.gif');
+
+}
