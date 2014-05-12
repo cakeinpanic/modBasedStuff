@@ -54,6 +54,7 @@ var Slideshow= Mod.extend({
 				this.$fsMode.appendChild(this.$leftArrow);
 				document.body.appendChild(this.$fsMode);
 				this.$fsMode.classList.add("fs-slideshow");
+				this.$fsButton.classList.add("minimize");
 			}
 			else
 			{
@@ -64,6 +65,7 @@ var Slideshow= Mod.extend({
 				this.appendChild(this.$secondImg);
 				this.appendChild(this.$rightArrow);
 				this.appendChild(this.$leftArrow);
+				this.$fsButton.classList.remove("minimize");
 			}
 			this._fsMode=!this._fsMode;
 
