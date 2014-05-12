@@ -44,14 +44,12 @@ var Slideshow= Mod.extend({
 	},
 	toggleFullscreen: function(){
 
-			if (!this._fsMode){
+			if (this.$fsMode==null)
 				this.$fsMode=document.createElement("div");
-				this.$fsMode.appendChild(this.$preloader);
-				this.$fsMode.appendChild(this.$fsButton);
-				this.$fsMode.appendChild(this.$firstImg);
-				this.$fsMode.appendChild(this.$secondImg);
-				this.$fsMode.appendChild(this.$rightArrow);
-				this.$fsMode.appendChild(this.$leftArrow);
+
+			if (!this._fsMode){
+
+				this.$fsMode.appendChild(this.$container);
 				document.body.appendChild(this.$fsMode);
 				this.$fsMode.classList.add("fs-slideshow");
 				this.$fsButton.classList.add("minimize");
@@ -59,12 +57,7 @@ var Slideshow= Mod.extend({
 			else
 			{
 				document.body.removeChild(this.$fsMode);
-				this.appendChild(this.$preloader);
-				this.appendChild(this.$fsButton);
-				this.appendChild(this.$firstImg);
-				this.appendChild(this.$secondImg);
-				this.appendChild(this.$rightArrow);
-				this.appendChild(this.$leftArrow);
+				this.appendChild(this.$container);
 				this.$fsButton.classList.remove("minimize");
 			}
 			this._fsMode=!this._fsMode;
@@ -87,30 +80,34 @@ var Slideshow= Mod.extend({
 					this._nextTimeout=null;
 					this._navCounter=0;
 
+					this.$container=document.createElement("div");
+					this.$container.setAttribute("class", "inner-container");
+					this.appendChild(this.$container);
+
 					this.$preloader=document.createElement("div");
 					this.$preloader.setAttribute("class", "preloader");
-					this.appendChild(this.$preloader);
+					this.$container.appendChild(this.$preloader);
 					this.$preloader.style.opacity=0;
 
 					this.$fsButton=document.createElement("div");
 					this.$fsButton.setAttribute("class", "fs-button");
-					this.appendChild(this.$fsButton);
+					this.$container.appendChild(this.$fsButton);
 
 					this.$secondImg=document.createElement("div");
 					this.$secondImg.setAttribute("class", "slideshow-image second");
-					this.appendChild(this.$secondImg);
+					this.$container.appendChild(this.$secondImg);
 
 					this.$firstImg=document.createElement("div");
 					this.$firstImg.setAttribute("class", "slideshow-image first");
-					this.appendChild(this.$firstImg);
+					this.$container.appendChild(this.$firstImg);
 
 					this.$rightArrow=document.createElement("div");
 					this.$rightArrow.setAttribute("class", "arrow right-arrow");
-					this.appendChild(this.$rightArrow);
+					this.$container.appendChild(this.$rightArrow);
 
 					this.$leftArrow=document.createElement("div");
 					this.$leftArrow.setAttribute("class", "arrow left-arrow");
-					this.appendChild(this.$leftArrow);
+					this.$container.appendChild(this.$leftArrow);
 
 
 					this.slideshowState="loading";
@@ -126,12 +123,11 @@ var Slideshow= Mod.extend({
 					this.$firstImg.style.opacity=0;
 					this.$firstImg.style.backgroundImage="";
 
-
-					if (this._fsMode)
-						this.$fsMode.insertBefore(this.$firstImg, this.$secondImg);
-					else
+					//if (this._fsMode)
+						this.$container.insertBefore(this.$firstImg, this.$secondImg);
+					/*else
 						this.insertBefore(this.$firstImg, this.$secondImg);
-
+*/
 					temp=this.$firstImg;
 					this.$firstImg=this.$secondImg;
 					this.$secondImg=temp;
