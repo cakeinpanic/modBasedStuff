@@ -75,7 +75,6 @@ var Slideshow= Mod.extend({
 				before: function(){
 					this._fsMode=false;
 					this._animationLength=1;
-					console.log("init");
 					this._animateTimeout=null;
 					this._nextTimeout=null;
 					this._navCounter=0;
@@ -93,6 +92,17 @@ var Slideshow= Mod.extend({
 					this.$fsButton.setAttribute("class", "fs-button");
 					this.$container.appendChild(this.$fsButton);
 
+					if(this.imgArray.length>1)
+					{
+						this.$rightArrow=document.createElement("div");
+						this.$rightArrow.setAttribute("class", "arrow right-arrow");
+						this.$container.appendChild(this.$rightArrow);
+
+						this.$leftArrow=document.createElement("div");
+						this.$leftArrow.setAttribute("class", "arrow left-arrow");
+						this.$container.appendChild(this.$leftArrow);
+
+					}
 					this.$secondImg=document.createElement("div");
 					this.$secondImg.setAttribute("class", "slideshow-image second");
 					this.$container.appendChild(this.$secondImg);
@@ -101,22 +111,13 @@ var Slideshow= Mod.extend({
 					this.$firstImg.setAttribute("class", "slideshow-image first");
 					this.$container.appendChild(this.$firstImg);
 
-					this.$rightArrow=document.createElement("div");
-					this.$rightArrow.setAttribute("class", "arrow right-arrow");
-					this.$container.appendChild(this.$rightArrow);
-
-					this.$leftArrow=document.createElement("div");
-					this.$leftArrow.setAttribute("class", "arrow left-arrow");
-					this.$container.appendChild(this.$leftArrow);
-
-
 					this.slideshowState="loading";
 					this.loaded[0]=true;
 				},
 			},
 			ready: {
 				before:function(){
-					console.log("ready");
+					//console.log("ready");
 					this.working=true;
 					clearTimeout(this._animateTimeout);
 
@@ -143,11 +144,11 @@ var Slideshow= Mod.extend({
 			},
 			loading: {
 				before: function(){
-					console.log("loading", this.$secondImg.style.opacity);
+					//console.log("loading", this.$secondImg.style.opacity);
 					this.$firstImg.style.opacity=0;
 					this.$secondImg.style.opacity=0;
 
-					console.log(document.body.clientWidth, document.body.clientHeight);
+					//console.log(document.body.clientWidth, document.body.clientHeight);
 					var imgLoaded = function(){
 						this.$preloader.style.opacity=0;
 					/*	if (this.loaded[this.currentImg][0]<document.body.clientWidth){
@@ -169,7 +170,7 @@ var Slideshow= Mod.extend({
 
 						image.onload = function () {
 							this.loaded[this.currentImg]=[image.width, image.height];
-							console.log(this.loaded[this.currentImg], "gg")
+							//console.log(this.loaded[this.currentImg], "gg")
 							imgLoaded();
 						}.bind(this);
 
@@ -184,7 +185,7 @@ var Slideshow= Mod.extend({
 			},
 			animating:{
 				before: function(){
-					console.log("animating");
+					//console.log("animating");
 					this.$secondImg.style.opacity="1";
 					this._animateTimeout= setTimeout(function() {this.slideshowState="ready"}.bind(this),
 					 this._animationLength*1000);
