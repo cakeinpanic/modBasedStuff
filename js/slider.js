@@ -140,7 +140,7 @@ var BaseSlider = Mod.extend({
 
 					}.bind(this);
 
-					if (this.$currentSlide.style.backgroundImage==this.slides[this.currentSlide]) {
+					if (this.$currentSlide.style.backgroundImage=="url('"+this.slides[this.currentSlide]+"')") {
 						this.slideState="ready"; return;
 					}
 

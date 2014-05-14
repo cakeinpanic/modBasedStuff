@@ -1,0 +1,162 @@
+.slideshow{
+	margin-top: 50px;
+	position:relative;
+	width:100%;
+	height:300px;
+	background-color: rgba(0,0,0,.5);
+}
+.inner-container{
+	position: relative;
+	width:100%;
+	height:100%;
+}
+.fs-slideshow{
+
+	position:fixed;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;
+	background: rgb(0,0,0);
+	min-height: 100%;
+	margin:0;
+	background-color: rgba(0,0,0,.7);
+}
+
+.slideshow-image{
+	height:100%;
+	width:80%;
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+	position:absolute;
+	right:10%;
+	top:0;
+	transition:opacity 1s;
+	opacity:0;
+}
+.arrow
+{
+
+	position: absolute;
+	z-index: 2;
+
+	width: 80px;
+	height: 100%;
+
+	cursor: pointer;
+
+	opacity: .3;
+	filter: alpha(opacity=30);
+    -webkit-transition: opacity 0.3s ease-out;
+    -moz-transition: opacity 0.3s ease-out;
+    -o-transition: opacity 0.3s ease-out;
+    transition: opacity 0.3s ease-out;
+}
+
+.arrow:after{
+	font-size: 60px;
+
+	position: absolute;
+	top: 50%;
+
+	width: 40px;
+	margin-top: -20px;
+
+	text-indent: 0;
+	text-align: center;
+
+	//color: @grayLight;
+	color: white;
+
+}
+.arrow:hover {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+
+.right-arrow{
+	left: auto;
+	right: 0;
+}
+.left-arrow{
+
+	left: 0;
+	right: auto;
+}
+
+
+.left-arrow:after {
+	content: "‹";
+	right: 35px;
+}
+
+.right-arrow:after {
+	content: "›";
+	left: 35px;
+}
+.preloader
+{
+	height:100%;
+	width:80%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	position:absolute;
+	background-size: auto auto;
+	right:10%;
+	top:0;
+	background-image: url('preloader_dots.gif');
+
+}
+
+
+.fs-button{
+
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 999;
+
+	width: 80px;
+	height: 60px;
+
+	cursor: pointer;
+
+	opacity: .3;
+	filter: alpha(opacity=30);
+	-webkit-transition: opacity 0.3s ease-out;
+	-moz-transition: opacity 0.3s ease-out;
+	-o-transition: opacity 0.3s ease-out;
+	transition: opacity 0.3s ease-out;
+
+}
+
+.fs-button:after {
+   // background: url(../img/galleria-sprites.png) no-repeat center;
+    background: url(galleria-sprites.png) no-repeat center;
+
+    position: absolute;
+	top: 10px;
+	right: 13px;
+	z-index: 999;
+
+	width: 20px;
+	height: 20px;
+
+	content: "";
+
+	background-color: #fff;
+	background-position: 2px 2px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	background-clip: padding-box;
+}
+
+.fs-button.minimize:after {
+	background-position: 2px -24px;
+}
+
+.fs-button:hover {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
