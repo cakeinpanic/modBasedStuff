@@ -9,6 +9,7 @@ You can see demos here:
 <a href="http://cakeinpanic.github.io/modBasedStuff/slider.html">image slider</a></li>
 <li>
 <a href="http://cakeinpanic.github.io/modBasedStuff/countdown.html">time countdown</a></li>
+<li><a href="http://cakeinpanic.github.io/modBasedStuff/slideshow.html">slideshow</a></li>
 </ul>
-<a href="http://cakeinpanic.github.io/modBasedStuff/slideshow.html">slideshow</a></li>
-</ul>
+
+
