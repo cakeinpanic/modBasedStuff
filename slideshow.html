@@ -9,21 +9,32 @@
 		<img src="style/slideshow-title.png" style="display: block; margin: 0 auto"></img>
 
 		<div class="slideshow-wrapper">
-			<div class="item-slideshow" smallImgArray="http://leprosorium.ru/i/gertruda/12.jpg,https://pp.vk.me/c620526/v620526447/62ac/JkpkHxZI2q0.jpg, https://pp.vk.me/c607126/v607126545/6ef2/c967xbJxU_4.jpg, http://www.fullhdoboi.ru/_ph/6/78583499.jpg" bigImgArray="http://leprosorium.ru/i/gertruda/12.jpg,https://pp.vk.me/c620526/v620526447/62ac/JkpkHxZI2q0.jpg, https://pp.vk.me/c607126/v607126545/6ef2/c967xbJxU_4.jpg, http://www.fullhdoboi.ru/_ph/6/78583499.jpg"  sourceInfo="f|f|f|f", sourceLinks="f|f|f|c", sourceTitle="f|f|g|s"></div>
+			<div class="item-slideshow" smallImgArray="http://media-cache-ec0.pinimg.com/736x/3f/05/57/3f0557787e9799cd37e239c65a133067.jpg,http://media-cache-ec0.pinimg.com/736x/bf/8d/51/bf8d511e55d56103351091c38e9cc828.jpg, http://media-cache-ec0.pinimg.com/736x/f3/80/10/f380106d1e13c516b7eddbbd22863c49.jpg, http://media-cache-ec0.pinimg.com/736x/c5/f8/ce/c5f8ce0bddf1338cc73e019f247068cd.jpg" bigImgArray="http://media-cache-ec0.pinimg.com/736x/3f/05/57/3f0557787e9799cd37e239c65a133067.jpg,http://media-cache-ec0.pinimg.com/736x/bf/8d/51/bf8d511e55d56103351091c38e9cc828.jpg, http://media-cache-ec0.pinimg.com/736x/f3/80/10/f380106d1e13c516b7eddbbd22863c49.jpg, http://media-cache-ec0.pinimg.com/736x/c5/f8/ce/c5f8ce0bddf1338cc73e019f247068cd.jpg"  sourceInfo="Cat|<a href='http://vk.com'>fgdf</a>|f|f"></div>
 				</div>
 
 		<div class="description">
-	  			<span>Slideshow based on <a href="https://github.com/dfcreative/mod/">dfcreative's mod</a>.</span><br>
-	  			<a href="index.html">watch other stuff based on Mod</a>
-	  			<br>
+			<h2> About </h2>
+	  			This is no-jQuery slideshow based on <a href="https://github.com/dfcreative/mod/">dfcreative's mod</a>.<br>
+	  			All images are loaded on demand and it supports separate images for fullscreen and standart mode for faster page loading. 
+	  			<h2> How to use </h2>
+	  			Download source code and include it into your html file.<br>
+	  			Before DOM:
+	  			<code>&#60;link rel="stylesheet" type="text/css" href="style/slideshowStyle.css"&#62;</code>
+	  			After DOM:
+<code>&#60;script src="js/mod.min.js" type="text/javascript"&#62;&#60;/script&#62;
+&#60;script src="js/slideshow.js" type="text/javascript"&#62;&#60;/script&#62;
+</code>
+Then just define your image urls, their thumbnails (for non-fullscreen mode) and titles divided by |. If image doesn't have any title – just leave its space empty. 
+And enjoy!
 <code>&#60;div <span class="code-attribute">class</span>=<span class="code-value">"item-slideshow"</span>
-	<span class="code-attribute">smallImgArray</span>=<span class="code-value">"1.jpg,2.jpg,3.jpg"</span> 
-	<span class="code-attribute">bigImgArray</span>=<span class="code-value">"1_big.jpg,2_big.jpg,3_big.jpg"</span> 
-	<span class="code-attribute">sourceInfo</span>=<span class="code-value">"Bob|Alice||"</span> 
-	<span class="code-attribute">sourceLinks</span>=<span class="code-value">"http://vk.com|||"</span> 
-	<span class="code-attribute">sourceTitle</span>=<span class="code-value">"Cat||Dog"&#62;</span> 
+     <span class="code-attribute">smallImgArray</span>=<span class="code-value">"1.jpg,2.jpg,3.jpg"</span> 
+     <span class="code-attribute">bigImgArray</span>=<span class="code-value">"1_big.jpg,2_big.jpg,3_big.jpg"</span> 
+     <span class="code-attribute">sourceInfo</span>=<span class="code-value">"Bob|Alice||"</span> 
 &#60;/div&#62;
 </code>
+If you want to stylize slideshow- it's fully customizable by css.
+<br>
+<a href="index.html">Watch other stuff based on Mod</a>
 	  	</div>
 
 

@@ -2,9 +2,6 @@ var Slideshow= Mod.extend({
 	smallImgArray: [],
 	bigImgArray: [],
 	sourceInfo: null,
-	sourceLinks:null,
-	sourceTitle:null,
-	placeholder: null,
 	'document click:delegate(.item-slideshow-nav.left)': function(e){this.removeQueue(); e.stopPropagation();},
 	'document click:delegate(.item-slideshow-nav.right)': function(e){this.addQueue();  e.stopPropagation();},
 	'document click:delegate(.item-slideshow-image)': function(e){ if (this.numImages>1) this.addQueue();  e.stopPropagation();},
@@ -80,48 +77,12 @@ var Slideshow= Mod.extend({
 	},
 	setImageInfo: function(imgId){
 		
-		var a;
 		var info=this.sourceInfo[imgId];
-		var link=this.sourceLinks[imgId];
-		var title=this.sourceTitle[imgId];
-
-		this.$sourceInfo.innerHTML="";
-		this.$imgTitle.innerHTML="";
-
-		if (title){
-			this.$imgTitle.innerHTML=title;
-			this.$imgTitle.style.display="";
-		}
-		else
-		{
-			this.$imgTitle.style.display="none";
-		}
+		
 		if (info){
-			if (link) {
-				a=document.createElement("a");
-				a.href=link;
-				a.setAttribute("rel","nofollow");
-				a.setAttribute("target","_blank");
-				a.innerHTML=info;
-				this.$sourceInfo.innerHTML="Источник фото: ";
-				this.$sourceInfo.appendChild(a);
-			}
-			else
-				this.$sourceInfo.innerHTML="Источник фото: "+info;
+			this.$sourceInfo.innerHTML=info;
 		}
-		else
-			{
-				if (link){
-					a=document.createElement("a");
-					a.href=link;
-					a.setAttribute("rel","nofollow");
-					a.setAttribute("target","_blank");
-					a.innerHTML="Источник фото";
-					this.$sourceInfo.appendChild(a);
-				}
-			}
-
-		this.$imgTitle.style.opacity="";
+		
 		this.$sourceInfo.style.opacity="";
 
 	},
@@ -172,21 +133,11 @@ var Slideshow= Mod.extend({
 						this.$container.appendChild(this.$leftArrow);
 					}
 
-					this.$imgTitle=document.createElement("div");
-					this.$imgTitle.classList.add("item-slideshow-image-title");
-
-					var imgTitleContainer=document.createElement("div");
-					imgTitleContainer.classList.add("item-slideshow-image-title-container");
-					this.$container.appendChild(imgTitleContainer);
-					imgTitleContainer.appendChild(this.$imgTitle);
-
 					this.$sourceInfo=document.createElement("div");
 					this.$sourceInfo.setAttribute("class", "item-slideshow-source-info");
 					this.$container.appendChild(this.$sourceInfo);
 
 					this.sourceInfo=this.sourceInfo.split("|");
-					this.sourceLinks=this.sourceLinks.split("|");
-					this.sourceTitle=this.sourceTitle.split("|");
 
 					this.slideshowState="loading";
 
@@ -220,7 +171,6 @@ var Slideshow= Mod.extend({
 					this.$firstImg.style.opacity=0;
 					this.$secondImg.style.opacity=0;
 
-					this.$imgTitle.style.opacity=0;
 					this.$sourceInfo.style.opacity=0;
 
 					var imgLoaded = function(img){

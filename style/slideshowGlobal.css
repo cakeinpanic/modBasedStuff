@@ -1,11 +1,15 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=latin,cyrillic-ext);
+@import url(http://fonts.googleapis.com/css?family=PT+Mono&subset=latin,latin-ext,cyrillic,cyrillic-ext);
+
 
 html, body
 {
 	height:100%;
 	font-family: 'PT Sans Narrow', sans-serif;
 }
-
+h1, h2, h3{
+	margin:2px 0;
+}
 body{
 	background: #66B3A7;
 	margin:0;
@@ -15,10 +19,10 @@ body{
 .wrapper
 {
 	position:relative;
-	margin: 0 auto;
+	margin: 20px auto;
 	min-height: 100%;
 	max-width:70%;
-	padding-top: 1px;
+	min-width: 750px;
 
 }
 .slideshow-wrapper{
@@ -33,30 +37,34 @@ body{
 	width: 90%;
 	border-radius:6px;
 	margin: 20px auto 0;
-	background: #F0563D;
+	background: #F78D54;
 	padding: 10px 20px;
+	margin-bottom: 20px;
+	font-size:18px;
+
 }
 code{
 	padding:5px;
 	padding-left:8px;
 	margin:0 auto;
-	border-radius: 2px;
-	background:  #EFF0E2;
+	border-radius: 4px;
+	background:  #F0F1DE;
 	font-size:15px;
-	margin: 4px 0;
+	margin: 6px 0;
 	width:95%;
 	overflow: hidden;
 	display: block;
 	white-space: pre;
 	text-align: left;
+	font-family: 'PT Mono' !important;
 }
 code span{
 	display: inline-block;
 
 }
 code .code-attribute{
-	color: green;
+	color: #437009;
 }
 code .code-value{
-	color: blue;
+	color: #007491;
 }
