@@ -11,9 +11,8 @@ var Slideshow= Mod.extend({
 	currentImg: {
 		value: 0,
 		change: function(value){
-			if (value == -1) this.currentImg=this.bigImgArray.length-1;
-			else
-				this.currentImg= value%this.bigImgArray.length;
+			this.currentImg= (this.bigImgArray.length+value)%this.bigImgArray.length;
+			
 			if (this.working){
 				this.slideshowState="loading";
 			}
@@ -76,13 +75,12 @@ var Slideshow= Mod.extend({
 
 	},
 	setImageInfo: function(imgId){
-		
 		var info=this.sourceInfo[imgId];
 		
-		if (info){
+		if (info!=null){
 			this.$sourceInfo.innerHTML=info;
 		}
-		
+
 		this.$sourceInfo.style.opacity="";
 
 	},
@@ -92,7 +90,7 @@ var Slideshow= Mod.extend({
 			init: {
 				before: function(){
 
-					this._animationLength=.25;
+					this._animationLength=.5;
 					this._animateTimeout=null;
 					this._nextTimeout=null;
 					this.numImages=this.bigImgArray.length;
