@@ -7,3 +7,5 @@ You can see demos here:
 <li>
 <a href="http://cakeinpanic.github.io/modBasedStuff/countdown.html">time countdown</a></li>
 </ul>
+<li><a href="http://cakeinpanic.github.io/modBasedStuff/slideshow.html">slideshow</a></li>
+</ul>
