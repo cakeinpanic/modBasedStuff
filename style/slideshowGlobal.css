@@ -16,6 +16,7 @@ body{
 	min-height: 100%;
 
 }
+
 .wrapper
 {
 	position:relative;
@@ -36,12 +37,30 @@ body{
 	text-align: left;
 	width: 90%;
 	border-radius:6px;
-	margin: 20px auto 0;
+	margin: 20px auto;
 	background: #F78D54;
-	padding: 10px 20px;
-	margin-bottom: 20px;
+	padding: 10px 5%;
 	font-size:18px;
-
+	position: relative;
+}
+.description-link{
+	color: rgb(143, 15, 56);
+}
+.small-text{
+	font-size: 12px;
+}
+.side-block{
+	position: absolute;
+	text-align: right;
+	line-height: 12px;
+	top:6px;
+	right:6px;
+	padding-left:4px;
+	border-radius: 3px;
+}
+.github-btn{
+	width:50px;
+	margin-right: -2px;
 }
 code{
 	padding:5px;
