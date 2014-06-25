@@ -87,3 +87,14 @@ code .code-attribute{
 code .code-value{
 	color: #007491;
 }
+
+.item-slideshow-preloader{
+	background-position: center center;
+	background-repeat: no-repeat;
+	position:absolute;
+	background-size: auto auto;
+	background-image: url(galleria-loader.gif);
+}
+.item-slideshow-preloader:after{
+	content:"";
+}

@@ -98,14 +98,14 @@ var Slideshow= Mod.extend({
 					this.$container.setAttribute("class", "item-slideshow-inner-container");
 					this.appendChild(this.$container);
 
+					var background = document.createElement("div");
+					background.setAttribute("class", "item-slideshow-background");
+					this.$container.appendChild(background);
+
 					this.$preloader = document.createElement("div");
 					this.$preloader.setAttribute("class", "item-slideshow-preloader");
 					this.$container.appendChild(this.$preloader);
 					this.$preloader.style.opacity = 0;
-
-					var background = document.createElement("div");
-					background.setAttribute("class", "item-slideshow-background");
-					this.$container.appendChild(background);
 
 					this.$fsButton = document.createElement("div");
 					this.$fsButton.setAttribute("class", "item-slideshow-fs-button");
