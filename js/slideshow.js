@@ -2,7 +2,7 @@ var Slideshow= Mod.extend({
 
 	smallImgArray: [],
 	bigImgArray: [],
-	sourceInfo: null,
+	imgTitles: null,
 
 	'document click:delegate(.item-slideshow-nav.left)': function(e) { this.removeQueue(); e.stopPropagation();},
 	'document click:delegate(.item-slideshow-nav.right)': function(e) { this.addQueue();  e.stopPropagation();},
@@ -74,13 +74,13 @@ var Slideshow= Mod.extend({
 			this.slideshowState = "loading";
 	},
 	setImageInfo: function(imgId) {
-		var info = this.sourceInfo[imgId];
+		var info = this.imgTitles[imgId];
 		
 		if (info != null) {
-			this.$sourceInfo.innerHTML = info;
+			this.$imgTitles.innerHTML = info;
 		}
 
-		this.$sourceInfo.style.opacity = "";
+		this.$imgTitles.style.opacity = "";
 
 	},
 	slideshowState:{
@@ -130,11 +130,11 @@ var Slideshow= Mod.extend({
 						this.$container.appendChild(this.$leftArrow);
 					}
 
-					this.$sourceInfo = document.createElement("div");
-					this.$sourceInfo.setAttribute("class", "item-slideshow-source-info");
-					this.$container.appendChild(this.$sourceInfo);
+					this.$imgTitles = document.createElement("div");
+					this.$imgTitles.setAttribute("class", "item-slideshow-source-info");
+					this.$container.appendChild(this.$imgTitles);
 
-					this.sourceInfo = this.sourceInfo.split("|");
+					this.imgTitles = this.imgTitles.split("|");
 
 					this.slideshowState = "loading";
 
@@ -168,7 +168,7 @@ var Slideshow= Mod.extend({
 
 					this.$firstImg.style.opacity = 0;
 					this.$secondImg.style.opacity = 0;
-					this.$sourceInfo.style.opacity = 0;
+					this.$imgTitles.style.opacity = 0;
 
 					var imgLoaded = function(img) {
 						this.$preloader.style.opacity = 0;
