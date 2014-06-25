@@ -98,3 +98,21 @@ code .code-value{
 .item-slideshow-preloader:after{
 	content:"";
 }
+
+.item-slideshow-fs-button.minimize:after{
+	background-position: 2px -24px;
+	content:"";
+}
+.item-slideshow-fs-button:after{
+	background: url(galleria-sprites.png) no-repeat center;
+	content:"";
+	background-color: #fff;
+	background-position: 2px 2px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	background-clip: padding-box;
+	width: 20px;
+	height: 20px;
+	top: 10px;
+	right: 13px;
+}
