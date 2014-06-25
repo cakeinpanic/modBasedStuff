@@ -1,14 +1,16 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=latin,cyrillic-ext);
 @import url(http://fonts.googleapis.com/css?family=PT+Mono&subset=latin,latin-ext,cyrillic,cyrillic-ext);
 
-
 html, body
 {
 	height:100%;
 	font-family: 'PT Sans Narrow', sans-serif;
 }
 h1, h2, h3{
-	margin:2px 0;
+	margin:4px 0 2px;
+}
+p{
+	margin:4px 0;
 }
 body{
 	background: #66B3A7;
@@ -16,14 +18,17 @@ body{
 	min-height: 100%;
 
 }
-
+.page-title{
+	display: block;
+	margin: 0 auto;
+}
 .wrapper
 {
 	position:relative;
 	margin: 20px auto;
 	min-height: 100%;
 	max-width:70%;
-	min-width: 750px;
+	min-width: 770px;
 
 }
 .slideshow-wrapper{
@@ -46,21 +51,21 @@ body{
 .description-link{
 	color: rgb(143, 15, 56);
 }
-.small-text{
-	font-size: 12px;
-}
+
 .side-block{
 	position: absolute;
 	text-align: right;
-	line-height: 12px;
-	top:6px;
-	right:6px;
+	line-height: 14px;
+	top:10px;
+	right:10px;
 	padding-left:4px;
 	border-radius: 3px;
+	font-size: 14px;
+	width: 90px;
 }
 .github-btn{
 	width:50px;
-	margin-right: -2px;
+	margin-right: -3px;
 }
 code{
 	padding:5px;
@@ -86,33 +91,4 @@ code .code-attribute{
 }
 code .code-value{
 	color: #007491;
-}
-
-.item-slideshow-preloader{
-	background-position: center center;
-	background-repeat: no-repeat;
-	position:absolute;
-	background-size: auto auto;
-	background-image: url(galleria-loader.gif);
-}
-.item-slideshow-preloader:after{
-	content:"";
-}
-
-.item-slideshow-fs-button.minimize:after{
-	background-position: 2px -24px;
-	content:"";
-}
-.item-slideshow-fs-button:after{
-	background: url(galleria-sprites.png) no-repeat center;
-	content:"";
-	background-color: #fff;
-	background-position: 2px 2px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	background-clip: padding-box;
-	width: 20px;
-	height: 20px;
-	top: 10px;
-	right: 13px;
 }

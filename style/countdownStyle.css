@@ -14,15 +14,15 @@
 	font-style: normal;
 	background: linear-gradient(to bottom, rgb(49, 48, 48), rgb(32, 31, 31));
 
-	 vertical-align: middle;
+	vertical-align: middle;
 
-      position: relative;
-      float: left;
-      width: 16px;
-      height: 30px;
-      font-size: 16px;
-      line-height: 29px;
-      box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+	position: relative;
+	float: left;
+	width: 16px;
+	height: 30px;
+	font-size: 16px;
+	line-height: 29px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, .5);
 
 }
 .circle.counter
