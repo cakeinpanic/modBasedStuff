@@ -5,6 +5,6 @@ Here are some utilities based on <a href="https://github.com/dfcreative/mod/">df
 [demo and documentation](http://cakeinpanic.github.io/modBasedStuff/slideshow.html)
 ##Countdown
 [demo and documentation](http://cakeinpanic.github.io/modBasedStuff/countdown.html)
-##Slider
-[demo and documentation](http://cakeinpanic.github.io/modBasedStuff/slider.html)
+##Image-rotator
+[demo and documentation](http://cakeinpanic.github.io/modBasedStuff/image-rotator.html)
 
