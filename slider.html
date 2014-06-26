@@ -2,17 +2,41 @@
 <meta charset="utf-8">
  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <title>Slider</title>
-<link rel="stylesheet" type="text/css" href="css/globalStyle.css">
+
+<link rel="stylesheet" type="text/css" href="css/slideshowPageStyle.css">
 <link rel="stylesheet" type="text/css" href="css/sliderStyle.css">
+
+<link rel="stylesheet" type="text/css" href="css/sliderPageStyle.css">
 <body>
 	<div class="wrapper">
+		<img src="assets/rotator/rotator_title.png" class="page-title"></img>
+
 		<div slider class="slider" slides="http://www.mirkrasiv.ru/images/articles/fauna/wombat/wombat-013.jpg,http://ic.pics.livejournal.com/my19edwin/28036223/1631043/original.jpg,http://supercoolpics.com/wp-content/uploads/2013/08/supercoolpics_06_09082013122508.jpg,http://jevayaplaneta.ru/wp-content/uploads/2012/02/363760015737-610x504.jpg" datamap="http://1.bp.blogspot.com/-nkMzFQvJEhI/T4y9nIgiACI/AAAAAAAABGg/3blEVEmLYJA/s1600/Wombat+Thumbs+up72.jpg" globalpreloader="global-preloader" preloader="preloader">
+
 		</div>
+		
 		<div class="last-slide-btn">Show me last slide</div>
 		<div class="description">
+			<div class="side-block">
 			<iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=cakeinpanic&repo=modBasedStuff&type=watch" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
-  			<span>Image slider based on <a href="https://github.com/dfcreative/mod/">dfcreative's mod</a>.</span><br>Slideshow starts on mouse rolled over. Whem mouse is out – slideshow returns to first image.<br> Standart functional is extended by "show me last slide" option with external manage (it is useful if you want to add some special last slide and it's suposed to be optional.)<br><br>
-  			<a href="index.html">watch other stuff based on Mod</a>
+			<br>
+			<a class="description-link" href="index.html">Watch other stuff based on Mod.</a>
+		</div>
+			
+  			<span>Image slider based on <a href="https://github.com/dfcreative/mod/">dfcreative's mod</a>.</span><br>Slideshow starts on mouse rolled over. Whem mouse is out – slideshow returns to first image.<br> Standart functional is extended by "show me last slide" option with external manage (it is useful if you want to add some special last slide and it's suposed to be optional.)
+  			<code>&#60;link rel="stylesheet" type="text/css" href="slideshowStyle.css"&#62;</code>
+	  			After DOM:
+<code>&#60;script src="mod.min.js" type="text/javascript"&#62;&#60;/script&#62;
+&#60;script src="slideshow.js" type="text/javascript"&#62;&#60;/script&#62;
+</code>
+Then just define your image urls, their thumbnails (for non-fullscreen mode) and titles divided by |. If image doesn't have any title – just leave its space empty. 
+And enjoy!
+<code>&#60;div <span class="code-attribute">class</span>=<span class="code-value">"item-slideshow"</span>
+     <span class="code-attribute">smallImgArray</span>=<span class="code-value">"1.jpg,2.jpg,3.jpg"</span> 
+     <span class="code-attribute">bigImgArray</span>=<span class="code-value">"1_big.jpg,2_big.jpg,3_big.jpg"</span> 
+     <span class="code-attribute">imgTitles</span>=<span class="code-value">"Bob|Alice||"</span> 
+&#60;/div&#62;
+</code>
   	</div>
 
 	</div>

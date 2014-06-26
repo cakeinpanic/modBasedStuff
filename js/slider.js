@@ -1,3 +1,5 @@
+var LOG = false;
+
 var BaseSlider = Mod.extend({
 	slides: [],
 	animating: null,
@@ -17,7 +19,7 @@ var BaseSlider = Mod.extend({
 		}
 	},
 	next: function(){
-		this.currentSlide=this.currentSlide+1;
+		this.currentSlide++;
 	},
 	toStart: function(){
 		this.currentSlide= 0;
@@ -29,7 +31,7 @@ var BaseSlider = Mod.extend({
 		this.working=true;
 	},
 	created:function(){
-	this.slideState="hidden";
+		this.slideState="hidden";
 	},
 
 	slideState:{
@@ -71,10 +73,21 @@ var BaseSlider = Mod.extend({
 
 			hidden:{
 				before: function(){
-					this.checkIfVisible();
+					fire(window,"scroll");
 				},
 				'window scroll': function(){
-					this.checkIfVisible();
+					var window_top = $(window).scrollTop();
+					var window_height = $(window).height();
+					var offset = $(this).offset();
+					var top = offset.top;
+
+					if (top + $(this).height() >= window_top && top <= window_top + window_height) {
+						this.loaded[0]=true;
+						this.style.backgroundImage="url('"+this.slides[0]+"')";
+						this.style.opacity=1;
+		
+						this.slideState="visible";
+					}
 				},
 				after: function(){
 				}
@@ -82,17 +95,16 @@ var BaseSlider = Mod.extend({
 
 			visible:{
 				before: function(){
-					//if there is what to slide
-						if (this.slides.length>1)
-						{
-							this.slideState="ready";
-						}
+	
+					if (this.slides.length>1){
+						this.slideState="ready";
+					}
 				}
 			},
 
 			ready: {
 				before: function(){
-					//console.log("ready");
+	
 					clearTimeout(this._postponeStartTimeout);
 					clearTimeout(this._slideshowTimeout);
 					clearTimeout(this._animateTimeout);
@@ -101,7 +113,7 @@ var BaseSlider = Mod.extend({
 					this.toStart();
 					this.stop();
 					if (this._mouseOn) {
-						//console.log("readyToContinue");
+		
 						this._postponeStartTimeout= setTimeout(function() {this.start();this.next();}.bind(this), this.slideshowLength*500);
 					}
 
@@ -109,10 +121,10 @@ var BaseSlider = Mod.extend({
 
 				mouseleave: function(){
 					this._mouseOn= false;
-					//this.start();
+	
 				},
 				mouseenter: function(){
-					//console.log("mouseenter", this._id);
+	
 					this._mouseOn= true;
 
 					this.firstInit();
@@ -130,7 +142,7 @@ var BaseSlider = Mod.extend({
 				before: function(){
 					clearTimeout(this._slideshowTimeout);
 					var imgLoaded = function(){
-						//console.log("loaded", this._id);
+		
 						this.$nextSlide.style.opacity="0";
 						this.$nextSlide.style.backgroundImage="url('"+this.slides[this.currentSlide]+"')";
 						this.slides[this.currentSlide].loaded=true;
@@ -140,7 +152,7 @@ var BaseSlider = Mod.extend({
 
 					}.bind(this);
 
-					if (this.$currentSlide.style.backgroundImage=="url('"+this.slides[this.currentSlide]+"')") {
+					if (this.$currentSlide.style.backgroundImage==this.slides[this.currentSlide]) {
 						this.slideState="ready"; return;
 					}
 
@@ -170,7 +182,7 @@ var BaseSlider = Mod.extend({
 
 			animating:{
 				before: function(){
-					//console.log("animating", this._id);
+	
 					this.$nextSlide.style.opacity="1";
 					this._animateTimeout= setTimeout(function() {this.slideState="idle"}.bind(this), this.animationLenght*1000);
 				},
@@ -185,9 +197,9 @@ var BaseSlider = Mod.extend({
 
 			idle:{
 				before: function(){
-					//console.log("idle");
+	
 					clearTimeout(this._animateTimeout);
-					this._slideshowTimeout= setTimeout(this.next, this.slideshowLength*1000);
+					this._slideshowTimeout= setTimeout(this.next.bind(this), this.slideshowLength*1000);
 
 					this.$currentSlide.style.backgroundImage=this.$nextSlide.style.backgroundImage;
 
@@ -208,7 +220,7 @@ var BaseSlider = Mod.extend({
 
 			resetting:{
 				before: function(){
-					//console.log("resetting");
+	
 					clearTimeout(this._animateTimeout);
 					curD=new Date().getTime();
 
@@ -290,27 +302,12 @@ var BaseSlider = Mod.extend({
 		this.$preloader.style.transition="all "+this.animationLenght+"s";
 
 		this.slideState="ready";
-	},
-	checkIfVisible: function(){
-		var window_top = $(window).scrollTop();
-		var window_height = $(window).height();
-		var offset = $(this).offset();
-		var top = offset.top;
-
-		if (top + $(this).height() >= window_top && top <= window_top + window_height) {
-			this.loaded[0]=true;
-			this.style.backgroundImage="url('"+this.slides[0]+"')";
-			this.style.opacity=1;
-			this.slideState="visible";
-		}
 	}
-
 });
 
-var ExtendedSlider = BaseSlider.extend({
+var MapSlider = BaseSlider.extend({
 	datamap: null,
 	showLast: function(){
-		//console.log("last");
 		if (this.datamap){
 			this.stopping = true;
 			if (this.slideState!="resetting")
@@ -320,7 +317,7 @@ var ExtendedSlider = BaseSlider.extend({
 		}
 	},
 	stopOnLast: function(){
-		this._tempIdleLength=this.slideshowLength;
+	    this._tempIdleLength=this.slideshowLength;
 		this.slideshowLength=this.stopLength;
 
 		this.firstInit();
@@ -333,7 +330,6 @@ var ExtendedSlider = BaseSlider.extend({
 			this.slideshowLength=this._tempIdleLength;
 			this.next();
 			this.stop();
-			//console.log("reset");
 		}
 	},
 	recoverAfterReset: function(){
@@ -360,7 +356,7 @@ var ExtendedSlider = BaseSlider.extend({
 		values: {
 			init: {
 				before: function(){
-					BaseSlider.properties.slideState.values.init.before.apply(this);
+					BaseSlider.properties.slideState.values.init.before.value.apply(this);
 
 					this._tempIdleLength=null;
 					this.stopLength= 10;
@@ -391,8 +387,4 @@ var ExtendedSlider = BaseSlider.extend({
 
 })
 
-ExtendedSlider.register("slider", {
-	customElement: "slider",
-	selector: ".slider"
-	}
-);
+MapSlider.register("slider",{selector: ".slider"});
