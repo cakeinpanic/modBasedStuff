@@ -1,17 +1,17 @@
 <!doctype html>
 <meta charset="utf-8">
  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<title>Slider</title>
+<title>Rotator</title>
 
 <link rel="stylesheet" type="text/css" href="css/slideshowPageStyle.css">
-<link rel="stylesheet" type="text/css" href="css/sliderStyle.css">
+<link rel="stylesheet" type="text/css" href="css/imageRotatorStyle.css">
+<link rel="stylesheet" type="text/css" href="css/imageRotatorPageStyle.css">
 
-<link rel="stylesheet" type="text/css" href="css/sliderPageStyle.css">
 <body>
 	<div class="wrapper">
 		<img src="assets/rotator/rotator_title.png" class="page-title"></img>
 
-		<div class="slider" slides="http://www.mirkrasiv.ru/images/articles/fauna/wombat/wombat-013.jpg,http://ic.pics.livejournal.com/my19edwin/28036223/1631043/original.jpg,http://supercoolpics.com/wp-content/uploads/2013/08/supercoolpics_06_09082013122508.jpg,http://jevayaplaneta.ru/wp-content/uploads/2012/02/363760015737-610x504.jpg" datamap="http://1.bp.blogspot.com/-nkMzFQvJEhI/T4y9nIgiACI/AAAAAAAABGg/3blEVEmLYJA/s1600/Wombat+Thumbs+up72.jpg" indicateSlides="True">
+		<div class="image-rotator" slides="http://www.mirkrasiv.ru/images/articles/fauna/wombat/wombat-013.jpg,http://ic.pics.livejournal.com/my19edwin/28036223/1631043/original.jpg,http://supercoolpics.com/wp-content/uploads/2013/08/supercoolpics_06_09082013122508.jpg,http://jevayaplaneta.ru/wp-content/uploads/2012/02/363760015737-610x504.jpg" datamap="http://1.bp.blogspot.com/-nkMzFQvJEhI/T4y9nIgiACI/AAAAAAAABGg/3blEVEmLYJA/s1600/Wombat+Thumbs+up72.jpg" indicateSlides="True">
 		<div class="description-link last-slide-btn">Show me last slide!</div>
 		</div>
 		
@@ -24,14 +24,14 @@
 			<h2>About</h2>
   			<span>Image rotator based on <a href="https://github.com/dfcreative/mod/">dfcreative's mod</a>.</span><br>Rotation starts on mouse rolled over. Whem mouse moves out – slideshow returns to first image.<br> Standart functional is extended by "show me last slide" option with external manage (it is useful if you want to add some special last slide and let user stop slideshow on it)
   			<h2>How to use</h2>
-<code>&#60;<span class="code-tag">link</span> rel="stylesheet" type="text/css" href="sliderStyle.css"&#62;</code>
+<code>&#60;<span class="code-tag">link</span> rel="stylesheet" type="text/css" href="imageRotatorStyle.css"&#62;</code>
 	  			After DOM:
 <code>&#60;<span class="code-tag">script</span> src="mod.min.js" type="text/javascript"&#62;&#60;<span class="code-tag">/script</span>&#62;
 &#60;<span class="code-tag">script</span> src="slideshow.js" type="text/javascript"&#62;&#60;<span class="code-tag">/script</span>&#62;
 </code>
 
-Define your images array (images would be scaled to slider size), special last image (if needed), and set preloader attribute to True if you want it to be showed. Otherway - don't set it ever.
-<code>&#60;<span class="code-tag">div</span> <span class="code-attribute">class</span>=<span class="code-value">"slider"</span>
+Define your images array (images would be scaled to rotator size), special last image (if needed), and set preloader attribute to True if you want it to be showed. Otherway - don't set it ever.
+<code>&#60;<span class="code-tag">div</span> <span class="code-attribute">class</span>=<span class="code-value">"image-rotator"</span>
      <span class="code-attribute">slides</span>=<span class="code-value">"1.jpg,2.jpg,3.jpg"</span> 
      <span class="code-attribute">datamap</span>=<span class="code-value">"1_big.jpg"</span>  
      <span class="code-attribute">indicateSlides</span>=<span class="code-value">"True"</span> 
@@ -40,11 +40,11 @@ Define your images array (images would be scaled to slider size), special last i
 To show special last slide – bind it from outside with method <span class="code-attribute">showLast()</span>;
 <code>&#60;<span class="code-tag">script</span> type="text/javascript"&#62;
     $(document).on("mouseenter", ".last-slide-btn", function() {
-    $(e.target).closest('.slider').showLast(); 
+    $(e.target).closest('.image-rotator').showLast(); 
     });
 
     $(document).on("mouseleave", ".last-slide-btn", function() {
-      $(e.target).closest('.slider').resetToNormal();
+      $(e.target).closest('.image-rotator').resetToNormal();
     });
 &#60;<span class="code-tag">/script</span>&#62;
 </code>
@@ -59,8 +59,8 @@ Now this rotator is successfully being used on <a class="description-link" href=
 </body>
 <script type="text/javascript">
 	$(document).on("mouseenter", ".last-slide-btn", function(e) { 
-		$(e.target).closest('.slider')[0].showLast();  });
-	$(document).on("mouseleave", ".last-slide-btn", function(e) { $(e.target).closest('.slider')[0].resetToNormal();});
+		$(e.target).closest('.image-rotator')[0].showLast();  });
+	$(document).on("mouseleave", ".last-slide-btn", function(e) { $(e.target).closest('.image-rotator')[0].resetToNormal();});
 </script>
 <script src="js/mod.min.js" type="text/javascript"> </script>
-<script src="js/slider.js" type="text/javascript"> </script>
+<script src="js/image-rotator.js" type="text/javascript"> </script>

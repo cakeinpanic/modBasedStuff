@@ -1,6 +1,6 @@
 var LOG = false;
 
-var BaseSlider = Mod.extend({
+var BaseRotator = Mod.extend({
 	slides: [],
 	animating: null,
 	idle: null,
@@ -304,7 +304,7 @@ var BaseSlider = Mod.extend({
 	}
 });
 
-var MapSlider = BaseSlider.extend({
+var MapRotator = BaseRotator.extend({
 	datamap: null,
 	showLast: function(){
 		if (this.datamap){
@@ -355,7 +355,7 @@ var MapSlider = BaseSlider.extend({
 		values: {
 			init: {
 				before: function(){
-					BaseSlider.properties.slideState.values.init.before.value.apply(this);
+					BaseRotator.properties.slideState.values.init.before.value.apply(this);
 
 					this._tempIdleLength=null;
 					this.stopLength= 10;
@@ -386,4 +386,4 @@ var MapSlider = BaseSlider.extend({
 
 })
 
-MapSlider.register("slider",{selector: ".slider"});
+MapRotator.register("image-rotator",{selector: ".image-rotator"});

@@ -8,7 +8,7 @@ body{
 	width: 50%;
 	max-width: 50%;
 }
-.slider{
+.image-rotator{
 	//display: inline-block;
 	//vertical-align: top;
 }
@@ -19,6 +19,7 @@ body{
 	background: #FFFCDC;
 	padding:20px 5%;
 }
+
 .last-slide-btn{
 	
 	position: absolute;
