@@ -7,8 +7,7 @@ var BaseSlider = Mod.extend({
 	animationLenght: .7,
 	slideshowLength: 1,
 	resetAimationLenght: .35,
-	preloader: null,
-	globalpreloader: null,
+	indicateSlides: null,
 	currentSlide: {
 		value: 0,
 		change: function(value){
@@ -46,8 +45,8 @@ var BaseSlider = Mod.extend({
 					this._mouseOn= false;
 					this.working= false;
 					this.loaded= null;
-					this.$preloader= null;
-					this.$globalPreloader= null;
+					this.$currentSlideIndicator= null;
+					this.$currentSlideWrapper= null;
 
 					this.loaded=new Array(this.slides.length);
 
@@ -55,18 +54,18 @@ var BaseSlider = Mod.extend({
 					this.slideshowLength= this.idle || this.slideshowLength;
 
 
-					if (this.preloader && this.slides.length>1 ){
-						this.$preloader=document.createElement("div");
-						this.$preloader.className="preloader";
+					if (this.indicateSlides && this.slides.length>1 ){
+						this.$currentSlideIndicator=document.createElement("div");
+						this.$currentSlideIndicator.className="preloader";
 
-						this.$globalPreloader=document.createElement("div");
-						this.$globalPreloader.className="global-preloader";
+						this.$currentSlideWrapper=document.createElement("div");
+						this.$currentSlideWrapper.className="global-preloader";
 
-						this.$globalPreloader.appendChild(this.$preloader);
-						this.appendChild(this.$globalPreloader);
+						this.$currentSlideWrapper.appendChild(this.$currentSlideIndicator);
+						this.appendChild(this.$currentSlideWrapper);
 
-						this.$preloader.style.transition="all "+this.animationLenght+"s";
-						this.$preloader.style.width=""+100/this.slides.length+"%";
+						this.$currentSlideIndicator.style.transition="all "+this.animationLenght+"s";
+						this.$currentSlideIndicator.style.width=""+100/this.slides.length+"%";
 					}
 				}
 			},
@@ -243,8 +242,8 @@ var BaseSlider = Mod.extend({
 
 					this.$currentSlide.style.transition=this.resetAimationLenght+"s opacity";
 					this.$nextSlide.style.transition=this.resetAimationLenght+"s opacity";
-					if (this.$preloader){
-						this.$preloader.style.transition="all "+this.resetAimationLenght+"s";
+					if (this.$currentSlideIndicator){
+						this.$currentSlideIndicator.style.transition="all "+this.resetAimationLenght+"s";
 					}
 					this._resetTimeout= setTimeout(this.recoverAfterReset.bind(this), this.resetAimationLenght*1000);
 
@@ -278,15 +277,15 @@ var BaseSlider = Mod.extend({
 			this.appendChild(this.$currentSlide);
 			this.appendChild(this.$nextSlide);
 
-			if (this.$globalPreloader)
-				this.appendChild(this.$globalPreloader);
+			if (this.$currentSlideWrapper)
+				this.appendChild(this.$currentSlideWrapper);
 
 			this.firstTime=false;
 		}
 	},
 	movePreloader: function(){
-		if (this.$preloader){
-			this.$preloader.style.left=(100/this.slides.length*this.currentSlide)+"%";
+		if (this.$currentSlideIndicator){
+			this.$currentSlideIndicator.style.left=(100/this.slides.length*this.currentSlide)+"%";
 		}
 	},
 	recoverAfterReset: function(){
@@ -299,7 +298,7 @@ var BaseSlider = Mod.extend({
 
 		this.$currentSlide.style.transition=this.animationLenght+"s opacity";
 		this.$nextSlide.style.transition=this.animationLenght+"s opacity";
-		this.$preloader.style.transition="all "+this.animationLenght+"s";
+		this.$currentSlideIndicator.style.transition="all "+this.animationLenght+"s";
 
 		this.slideState="ready";
 	}
@@ -342,7 +341,7 @@ var MapSlider = BaseSlider.extend({
 
 		this.$currentSlide.style.transition=this.animationLenght+"s opacity";
 		this.$nextSlide.style.transition=this.animationLenght+"s opacity";
-		this.$preloader.style.transition="all "+this.animationLenght+"s";
+		this.$currentSlideIndicator.style.transition="all "+this.animationLenght+"s";
 
 		if (this.stopping)
 			this.stopOnLast();
@@ -364,20 +363,20 @@ var MapSlider = BaseSlider.extend({
 
 					if (this.datamap) {
 						this.slides.push(this.datamap);
-						if (this.$preloader)
-							this.$preloader.style.width=""+100/this.slides.length+"%";
-						else if (this.preloader && this.slides.length > 1 ) {
-							this.$preloader=document.createElement("div");
-							this.$preloader.className=this.preloader;
+						if (this.$currentSlideIndicator)
+							this.$currentSlideIndicator.style.width=""+100/this.slides.length+"%";
+						else if (this.indicateSlides && this.slides.length > 1 ) {
+							this.$currentSlideIndicator=document.createElement("div");
+							this.$currentSlideIndicator.className=this.indicateSlides;
 
-							this.$globalPreloader=document.createElement("div");
-							this.$globalPreloader.className=this.globalpreloader;
+							this.$currentSlideWrapper=document.createElement("div");
+							this.$currentSlideWrapper.className=this.globalpreloader;
 
-							this.$globalPreloader.appendChild(this.$preloader);
-							this.appendChild(this.$globalPreloader);
+							this.$currentSlideWrapper.appendChild(this.$currentSlideIndicator);
+							this.appendChild(this.$currentSlideWrapper);
 
-							this.$preloader.style.transition="all "+this.animationLenght+"s";
-							this.$preloader.style.width=""+100/this.slides.length+"%";
+							this.$currentSlideIndicator.style.transition="all "+this.animationLenght+"s";
+							this.$currentSlideIndicator.style.width=""+100/this.slides.length+"%";
 						}
 					}
 				}

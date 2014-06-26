@@ -11,7 +11,7 @@
 	<div class="wrapper">
 		<img src="assets/rotator/rotator_title.png" class="page-title"></img>
 
-		<div class="slider" slides="http://www.mirkrasiv.ru/images/articles/fauna/wombat/wombat-013.jpg,http://ic.pics.livejournal.com/my19edwin/28036223/1631043/original.jpg,http://supercoolpics.com/wp-content/uploads/2013/08/supercoolpics_06_09082013122508.jpg,http://jevayaplaneta.ru/wp-content/uploads/2012/02/363760015737-610x504.jpg" datamap="http://1.bp.blogspot.com/-nkMzFQvJEhI/T4y9nIgiACI/AAAAAAAABGg/3blEVEmLYJA/s1600/Wombat+Thumbs+up72.jpg" preloader="True">
+		<div class="slider" slides="http://www.mirkrasiv.ru/images/articles/fauna/wombat/wombat-013.jpg,http://ic.pics.livejournal.com/my19edwin/28036223/1631043/original.jpg,http://supercoolpics.com/wp-content/uploads/2013/08/supercoolpics_06_09082013122508.jpg,http://jevayaplaneta.ru/wp-content/uploads/2012/02/363760015737-610x504.jpg" datamap="http://1.bp.blogspot.com/-nkMzFQvJEhI/T4y9nIgiACI/AAAAAAAABGg/3blEVEmLYJA/s1600/Wombat+Thumbs+up72.jpg" indicateSlides="True">
 		<div class="description-link last-slide-btn">Show me last slide!</div>
 		</div>
 		
@@ -29,11 +29,12 @@
 <code>&#60;<span class="code-tag">script</span> src="mod.min.js" type="text/javascript"&#62;&#60;<span class="code-tag">/script</span>&#62;
 &#60;<span class="code-tag">script</span> src="slideshow.js" type="text/javascript"&#62;&#60;<span class="code-tag">/script</span>&#62;
 </code>
-Define your images array (images would be scaled to slider size), special last image (if needed), and seе preloader attribute to True if you want it to be showed. Otherway - don't set it ever.
+
+Define your images array (images would be scaled to slider size), special last image (if needed), and set preloader attribute to True if you want it to be showed. Otherway - don't set it ever.
 <code>&#60;<span class="code-tag">div</span> <span class="code-attribute">class</span>=<span class="code-value">"slider"</span>
      <span class="code-attribute">slides</span>=<span class="code-value">"1.jpg,2.jpg,3.jpg"</span> 
      <span class="code-attribute">datamap</span>=<span class="code-value">"1_big.jpg"</span>  
-     <span class="code-attribute">preloader</span>=<span class="code-value">"True"</span> 
+     <span class="code-attribute">indicateSlides</span>=<span class="code-value">"True"</span> 
 &#60;<span class="code-tag">/div</span>&#62;
 </code>
 To show special last slide – bind it from outside with method <span class="code-attribute">showLast()</span>;
