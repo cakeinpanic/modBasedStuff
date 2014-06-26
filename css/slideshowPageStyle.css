@@ -86,9 +86,12 @@ code span{
 	display: inline-block;
 
 }
-code .code-attribute{
+.code-attribute{
 	color: #437009;
 }
-code .code-value{
+.code-value{
 	color: #007491;
+}
+.code-tag{
+	color: rgb(213, 35, 35);
 }

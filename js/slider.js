@@ -57,10 +57,10 @@ var BaseSlider = Mod.extend({
 
 					if (this.preloader && this.slides.length>1 ){
 						this.$preloader=document.createElement("div");
-						this.$preloader.className=this.preloader;
+						this.$preloader.className="preloader";
 
 						this.$globalPreloader=document.createElement("div");
-						this.$globalPreloader.className=this.globalpreloader;
+						this.$globalPreloader.className="global-preloader";
 
 						this.$globalPreloader.appendChild(this.$preloader);
 						this.appendChild(this.$globalPreloader);
@@ -366,7 +366,7 @@ var MapSlider = BaseSlider.extend({
 						this.slides.push(this.datamap);
 						if (this.$preloader)
 							this.$preloader.style.width=""+100/this.slides.length+"%";
-						else if (this.preloader && this.slides.length>1 ) {
+						else if (this.preloader && this.slides.length > 1 ) {
 							this.$preloader=document.createElement("div");
 							this.$preloader.className=this.preloader;
 

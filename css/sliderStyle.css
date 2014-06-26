@@ -3,7 +3,8 @@
 	width: 600px;
 	height: 400px;
 	position: relative;
-	outline: 1px solid lightGrey;
+	//outline: 1px solid lightGrey;
+	box-shadow: 1px 1px 3px 2px rgba(0,0,0,.4);
 	margin: 35px auto 6px;
 
 	background-size: cover;
@@ -38,18 +39,4 @@
 	bottom:0;
 	left:0;
 }
-.last-slide-btn{
-	position: relative;
-	width:600px;
-	margin:0 auto;
-	text-align: right;
-	font-family: 'Lato' serif;
-	letter-spacing: 1px;
-	font-weight: 300;
-	font-style: italic;
-	text-decoration: underline;
-	font-size: 18px;
-	color: rgb(230, 102, 17);
-	margin-bottom:15px;
-	cursor: pointer;
-}
+

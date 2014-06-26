@@ -11,39 +11,55 @@
 	<div class="wrapper">
 		<img src="assets/rotator/rotator_title.png" class="page-title"></img>
 
-		<div slider class="slider" slides="http://www.mirkrasiv.ru/images/articles/fauna/wombat/wombat-013.jpg,http://ic.pics.livejournal.com/my19edwin/28036223/1631043/original.jpg,http://supercoolpics.com/wp-content/uploads/2013/08/supercoolpics_06_09082013122508.jpg,http://jevayaplaneta.ru/wp-content/uploads/2012/02/363760015737-610x504.jpg" datamap="http://1.bp.blogspot.com/-nkMzFQvJEhI/T4y9nIgiACI/AAAAAAAABGg/3blEVEmLYJA/s1600/Wombat+Thumbs+up72.jpg" globalpreloader="global-preloader" preloader="preloader">
-
+		<div class="slider" slides="http://www.mirkrasiv.ru/images/articles/fauna/wombat/wombat-013.jpg,http://ic.pics.livejournal.com/my19edwin/28036223/1631043/original.jpg,http://supercoolpics.com/wp-content/uploads/2013/08/supercoolpics_06_09082013122508.jpg,http://jevayaplaneta.ru/wp-content/uploads/2012/02/363760015737-610x504.jpg" datamap="http://1.bp.blogspot.com/-nkMzFQvJEhI/T4y9nIgiACI/AAAAAAAABGg/3blEVEmLYJA/s1600/Wombat+Thumbs+up72.jpg" preloader="True">
+		<div class="description-link last-slide-btn">Show me last slide!</div>
 		</div>
 		
-		<div class="last-slide-btn">Show me last slide</div>
 		<div class="description">
 			<div class="side-block">
 			<iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=cakeinpanic&repo=modBasedStuff&type=watch" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
 			<br>
 			<a class="description-link" href="index.html">Watch other stuff based on Mod.</a>
 		</div>
-			
-  			<span>Image slider based on <a href="https://github.com/dfcreative/mod/">dfcreative's mod</a>.</span><br>Slideshow starts on mouse rolled over. Whem mouse is out – slideshow returns to first image.<br> Standart functional is extended by "show me last slide" option with external manage (it is useful if you want to add some special last slide and it's suposed to be optional.)
-  			<code>&#60;link rel="stylesheet" type="text/css" href="slideshowStyle.css"&#62;</code>
+			<h2>About</h2>
+  			<span>Image rotator based on <a href="https://github.com/dfcreative/mod/">dfcreative's mod</a>.</span><br>Rotation starts on mouse rolled over. Whem mouse moves out – slideshow returns to first image.<br> Standart functional is extended by "show me last slide" option with external manage (it is useful if you want to add some special last slide and let user stop slideshow on it)
+  			<h2>How to use</h2>
+<code>&#60;<span class="code-tag">link</span> rel="stylesheet" type="text/css" href="sliderStyle.css"&#62;</code>
 	  			After DOM:
-<code>&#60;script src="mod.min.js" type="text/javascript"&#62;&#60;/script&#62;
-&#60;script src="slideshow.js" type="text/javascript"&#62;&#60;/script&#62;
+<code>&#60;<span class="code-tag">script</span> src="mod.min.js" type="text/javascript"&#62;&#60;<span class="code-tag">/script</span>&#62;
+&#60;<span class="code-tag">script</span> src="slideshow.js" type="text/javascript"&#62;&#60;<span class="code-tag">/script</span>&#62;
 </code>
-Then just define your image urls, their thumbnails (for non-fullscreen mode) and titles divided by |. If image doesn't have any title – just leave its space empty. 
-And enjoy!
-<code>&#60;div <span class="code-attribute">class</span>=<span class="code-value">"item-slideshow"</span>
-     <span class="code-attribute">smallImgArray</span>=<span class="code-value">"1.jpg,2.jpg,3.jpg"</span> 
-     <span class="code-attribute">bigImgArray</span>=<span class="code-value">"1_big.jpg,2_big.jpg,3_big.jpg"</span> 
-     <span class="code-attribute">imgTitles</span>=<span class="code-value">"Bob|Alice||"</span> 
-&#60;/div&#62;
+Define your images array (images would be scaled to slider size), special last image (if needed), and seе preloader attribute to True if you want it to be showed. Otherway - don't set it ever.
+<code>&#60;<span class="code-tag">div</span> <span class="code-attribute">class</span>=<span class="code-value">"slider"</span>
+     <span class="code-attribute">slides</span>=<span class="code-value">"1.jpg,2.jpg,3.jpg"</span> 
+     <span class="code-attribute">datamap</span>=<span class="code-value">"1_big.jpg"</span>  
+     <span class="code-attribute">preloader</span>=<span class="code-value">"True"</span> 
+&#60;<span class="code-tag">/div</span>&#62;
 </code>
+To show special last slide – bind it from outside with method <span class="code-attribute">showLast()</span>;
+<code>&#60;<span class="code-tag">script</span> type="text/javascript"&#62;
+    $(document).on("mouseenter", ".last-slide-btn", function() {
+    $(e.target).closest('.slider').showLast(); 
+    });
+
+    $(document).on("mouseleave", ".last-slide-btn", function() {
+      $(e.target).closest('.slider').resetToNormal();
+    });
+&#60;<span class="code-tag">/script</span>&#62;
+</code>
+
+<h2>Customization</h2>
+Rotator is fully costomizable by css. 
+<h2>Usecases</h2>
+Now this rotator is successfully being used on <a class="description-link" href="http://kudago.com" target="_blank">kudago.com</a> for all items in catalog. And special slide option is used to show map for places. <a class="description-link" href="http://kudago.com/new-york/place/erata-galleries/" target="_blank">For example</a> (hover address to see map)<br>
   	</div>
 
 	</div>
 </body>
 <script type="text/javascript">
-	$(document).on("mouseenter", ".last-slide-btn", function() { $('.slider')[0].showLast(); });
-	$(document).on("mouseleave", ".last-slide-btn", function() { $('.slider')[0].resetToNormal(); });
+	$(document).on("mouseenter", ".last-slide-btn", function(e) { 
+		$(e.target).closest('.slider')[0].showLast();  });
+	$(document).on("mouseleave", ".last-slide-btn", function(e) { $(e.target).closest('.slider')[0].resetToNormal();});
 </script>
 <script src="js/mod.min.js" type="text/javascript"> </script>
 <script src="js/slider.js" type="text/javascript"> </script>

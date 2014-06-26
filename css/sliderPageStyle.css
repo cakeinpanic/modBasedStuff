@@ -5,26 +5,33 @@ body{
 
 }
 .wrapper{
-	width: 90%;
-	max-width: 90%;
+	width: 50%;
+	max-width: 50%;
 }
 .slider{
-	display: inline-block;
-	vertical-align: top;
+	//display: inline-block;
+	//vertical-align: top;
 }
 .description{
-	display: inline-block;
-	vertical-align: top;
-	width:400px;
-	margin-left: 40px;
+	
+	width:90%px;
+	margin: 40px auto;
 	background: #FFFCDC;
-	padding:20px 30px;
+	padding:20px 5%;
 }
 .last-slide-btn{
-	float:left;
-	position: relative;
-	width:600px;
+	
+	position: absolute;
+	bottom:-45px;
+	right:0px;
+	text-align: right;
+	letter-spacing: 1px;
+	text-decoration: underline;
+	font-size: 18px;
+	margin-bottom:15px;
+	cursor: pointer;
 }
+
 
 @media (max-width:1200px){
 	.wrapper{
