@@ -33,11 +33,8 @@ body{
 	cursor: pointer;
 }
 
-
-@media (max-width:1200px){
-	.wrapper{
-		width: 600px;
-		max-width: 600px;
-		min-width: 600px;
-	}
+.rotator-tip{
+	position: absolute;
+	top:132px;
+	right:-90px;
 }
