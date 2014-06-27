@@ -8,7 +8,7 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 }
-.inside-pic
+.image-rotator-inside-pic
 {
 	width: inherit;
 	height: inherit;
@@ -18,9 +18,9 @@
 	background-repeat: no-repeat;
 
 }
-.global-preloader{
+.image-rotator-indicator-wrapper{
 	position:absolute;
-	background-color: red;
+	background-color: black;
 	opacity: .3;
 	height: 7px;
 
@@ -29,8 +29,8 @@
 	width: 100%;
 }
 
-.preloader{
-	background-color: blue;
+.image-rotator-indicator{
+	background-color: white;
 	height: 7px;
 	position:absolute;
 	bottom:0;

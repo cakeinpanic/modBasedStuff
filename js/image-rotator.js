@@ -51,14 +51,12 @@ var BaseRotator = Mod.extend({
 					this.animationLenght = this.animating || this.animationLength;					
 					this.idleLength = this.idle || this.idleLength;
 					
-
-
 					if (this.indicateSlides && this.slides.length>1 ) {
 						this.$currentSlideIndicator = document.createElement("div");
-						this.$currentSlideIndicator.className = "preloader";
+						this.$currentSlideIndicator.className = "image-rotator-indicator";
 
 						this.$currentSlideWrapper = document.createElement("div");
-						this.$currentSlideWrapper.className = "global-preloader";
+						this.$currentSlideWrapper.className = "image-rotator-indicator-wrapper";
 
 						this.$currentSlideWrapper.appendChild(this.$currentSlideIndicator);
 						this.appendChild(this.$currentSlideWrapper);
@@ -260,8 +258,8 @@ var BaseRotator = Mod.extend({
 			this.$nextSlide = document.createElement("div");
 			this.$currentSlide = document.createElement("div");
 
-			this.$currentSlide.className += "inside-pic";
-			this.$nextSlide.className += "inside-pic";
+			this.$currentSlide.classList.add("image-rotator-inside-pic");
+			this.$nextSlide.classList.add("image-rotator-inside-pic");
 
 			this.setTransition(this.$currentSlide,this.animationLenght+"s opacity");
 			this.setTransition(this.$nextSlide,this.animationLenght+"s opacity");
