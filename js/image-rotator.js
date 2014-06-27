@@ -111,7 +111,6 @@ var BaseRotator = Mod.extend({
 					this.toStart();
 					this.stop();
 					if (this._mouseOn) {
-		
 						this._postponeStartTimeout = setTimeout(function() {this.start();this.next();}.bind(this), this.idleLength*500);
 					}
 
@@ -132,7 +131,6 @@ var BaseRotator = Mod.extend({
 				},
 				after: function() {
 					clearTimeout(this._postponeStartTimeout);
-
 				}
 			},
 
@@ -175,7 +173,6 @@ var BaseRotator = Mod.extend({
 				mouseenter: function() {
 					this._mouseOn = true;
 				}
-
 			},
 
 			animating:{
@@ -220,7 +217,7 @@ var BaseRotator = Mod.extend({
 				before: function() {
 	
 					clearTimeout(this._animateTimeout);
-					curD=new Date().getTime();
+					curD = new Date().getTime();
 
 					this.stop();
 					this.toStart();

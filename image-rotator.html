@@ -12,40 +12,48 @@
 	<div class="wrapper">
 		<img src="assets/rotator/rotator_title.png" class="page-title"></img>
 		<img src="assets/rotator/tip.png" class="rotator-tip"></img>
-
-		<div class="image-rotator" slides="http://www.mirkrasiv.ru/images/articles/fauna/wombat/wombat-013.jpg,http://ic.pics.livejournal.com/my19edwin/28036223/1631043/original.jpg,http://supercoolpics.com/wp-content/uploads/2013/08/supercoolpics_06_09082013122508.jpg,http://jevayaplaneta.ru/wp-content/uploads/2012/02/363760015737-610x504.jpg" datamap="http://1.bp.blogspot.com/-nkMzFQvJEhI/T4y9nIgiACI/AAAAAAAABGg/3blEVEmLYJA/s1600/Wombat+Thumbs+up72.jpg" indicateSlides="true" animating=".7" idle="1">
-		<div class="description-link last-slide-btn">Show me last slide!</div>
+		<div class="image-rotator-container">
+			<div class="image-rotator" slides="http://www.mirkrasiv.ru/images/articles/fauna/wombat/wombat-013.jpg,http://ic.pics.livejournal.com/my19edwin/28036223/1631043/original.jpg,http://supercoolpics.com/wp-content/uploads/2013/08/supercoolpics_06_09082013122508.jpg,http://jevayaplaneta.ru/wp-content/uploads/2012/02/363760015737-610x504.jpg" datamap="http://1.bp.blogspot.com/-nkMzFQvJEhI/T4y9nIgiACI/AAAAAAAABGg/3blEVEmLYJA/s1600/Wombat+Thumbs+up72.jpg" indicateSlides="true" animating=".7" idle="1">
+			<div class="description-link last-slide-btn">Show me last slide!</div>
+		</div>
+		
 		</div>
 		
 		<div class="description">
 			<div class="side-block">
-			<iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=cakeinpanic&repo=modBasedStuff&type=watch" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
-			<br>
-			<a class="description-link" href="index.html">Watch other stuff based on Mod.</a>
-		</div>
+				<iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=cakeinpanic&repo=modBasedStuff&type=watch" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
+				<br>
+				<a class="description-link" href="index.html">Watch other stuff based on Mod.</a>
+			</div>
 			<h2>About</h2>
 	  			Image rotator based on <a href="https://github.com/dfcreative/mod/">dfcreative's mod</a>.<br>
 	  			Rotation starts on mouse rolled over. Whem mouse moves out – slideshow returns to first image.<br>
 	  			Standart functional is extended by "show me last slide" option with external manage (it is useful if you want to add some special last slide and let user stop slideshow on it)
   			<h2>How to use</h2>
-<code>&#60;<span class="code-tag">link</span> <span class="code-attribute">rel</span>=<span class="code-value">"stylesheet"</span> <span class="code-attribute">type</span>=<span class="code-value">"text/css"</span> <span class="code-attribute">href</span>=<span class="code-value">"imageRotatorStyle.css"</span>&#62;</code>
+				<code><pre>
+&#60;<span class="code-tag">link</span> <span class="code-attribute">rel</span>=<span class="code-value">"stylesheet"</span> <span class="code-attribute">type</span>=<span class="code-value">"text/css"</span> <span class="code-attribute">href</span>=<span class="code-value">"imageRotatorStyle.css"</span>&#62;</pre>
+				</code>
 	  			After DOM:
-<code>&#60;<span class="code-tag">script</span> <span class="code-attribute">src</span>=<span class="code-value">"mod.min.js"</span> <span class="code-attribute">type</span>=<span class="code-value">"text/javascript"</span>&#62;&#60;<span class="code-tag">/script</span>&#62;
-&#60;<span class="code-tag">script</span> <span class="code-attribute">src</span>=<span class="code-value">"slideshow.js"</span> <span class="code-attribute">type</span>=<span class="code-value">"text/javascript"</span>&#62;&#60;<span class="code-tag">/script</span>&#62;
-</code>
-				Then just create div element with set <span class="code-attribute">width</span> and <span class="code-attribute">height</span>, set class <span class="code-value">"image-slider"</span> to it and define some additioanl attributes.<br>
+				<code><pre>
+&#60;<span class="code-tag">script</span> <span class="code-attribute">src</span>=<span class="code-value">"mod.min.js"</span> <span class="code-attribute">type</span>=<span class="code-value">"text/javascript"</span>&#62;&#60;<span class="code-tag">/script</span>&#62;
+&#60;<span class="code-tag">script</span> <span class="code-attribute">src</span>=<span class="code-value">"image-rotator.js"</span> <span class="code-attribute">type</span>=<span class="code-value">"text/javascript"</span>&#62;&#60;<span class="code-tag">/script</span>&#62;</pre>
+				</code>
+				Create rotator element with class <span class="code-value">"image-slider"</span> to it and define some additional attributes.<br>
+				Rotator will stretch to it's container size.<br>
 				Define your images array (images would be scaled to rotator size), special last image (if needed), and set <span class="code-attribute">preloader</span> attribute to <span class="code-value">true</span> if you want it to be showed. Otherway - don't set it ever.<br>
 				Animation and idle time are set in corresponding parameters in seconds (default values are both 1 second)
-<code>&#60;<span class="code-tag">div</span> <span class="code-attribute">class</span>=<span class="code-value">"image-rotator"</span>
+				<code><pre>
+&#60;<span class="code-tag">div</span> <span class="code-attribute">class</span>=<span class="code-value">"image-rotator"</span>
      <span class="code-attribute">slides</span>=<span class="code-value">"1.jpg,2.jpg,3.jpg"</span> 
      <span class="code-attribute">datamap</span>=<span class="code-value">"1_big.jpg"</span>  
      <span class="code-attribute">indicateSlides</span>=<span class="code-value">"true"</span> 
      <span class="code-attribute">animating</span>=<span class="code-value">".5"</span> 
      <span class="code-attribute">idle</span>=<span class="code-value">"2"</span> 
-&#60;<span class="code-tag">/div</span>&#62;
-</code>
+&#60;<span class="code-tag">/div</span>&#62;</pre>
+				</code>
 				To show special last slide – bind it from outside with method <span class="code-attribute">showLast()</span>;
-<code>&#60;<span class="code-tag">script</span> <span class="code-attribute">type</span>=<span class="code-value">"text/javascript"</span>&#62;
+				<code><pre>
+&#60;<span class="code-tag">script</span> <span class="code-attribute">type</span>=<span class="code-value">"text/javascript"</span>&#62;
     <span class="code-tag">$</span>(document).<span class="code-attribute">on</span>(<span class="code-value">"mouseenter"</span>, <span class="code-value">".last-slide-btn"</span>, function() {
         <span class="code-tag">$</span>(e.target).<span class="code-attribute">closest</span>(<span class="code-value">'.image-rotator'</span>).<span class="code-attribute">showLast</span>(); 
     });
@@ -53,14 +61,14 @@
     <span class="code-tag">$</span>(document).<span class="code-attribute">on</span>(<span class="code-value">"mouseleave"</span>, <span class="code-value">".last-slide-btn"</span>, function() {
         <span class="code-tag">$</span>(e.target).<span class="code-attribute">closest</span>(<span class="code-value">'.image-rotator'</span>).<span class="code-attribute">resetToNormal</span>();
     });
-&#60;<span class="code-tag">/script</span>&#62;
-</code>
+&#60;<span class="code-tag">/script</span>&#62;</pre>
+				</code>
 
 			<h2>Customization</h2>
 				Rotator is fully costomizable by css. 
 			<h2>Usecases</h2>
 				Now this rotator is successfully being used on <a class="description-link" href="http://kudago.com" target="_blank">kudago.com</a> for all items in catalog. And special slide option is used to show map for places. <a class="description-link" href="http://kudago.com/new-york/restaurants" target="_blank">For example</a> (hover address to see map)<br>
-  	</div>
+  		</div>
 
 	</div>
 </body>

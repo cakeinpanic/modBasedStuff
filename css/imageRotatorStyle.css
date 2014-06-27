@@ -1,10 +1,8 @@
 .image-rotator
 {
-	width: 600px;
-	height: 400px;
+	width:100%;
+	height:100%;
 	position: relative;
-	box-shadow: 1px 1px 3px 2px rgba(0,0,0,.4);
-	margin: 35px auto 6px;
 
 	background-size: cover;
 	background-position: center center;

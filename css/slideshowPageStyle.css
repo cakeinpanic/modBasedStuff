@@ -67,7 +67,7 @@ body{
 	width:50px;
 	margin-right: -3px;
 }
-code{
+code pre{
 	padding:5px;
 	padding-left:8px;
 	margin:0 auto;
@@ -78,11 +78,11 @@ code{
 	width:95%;
 	overflow: hidden;
 	display: block;
-	white-space: pre;
+	//white-space: pre;
 	text-align: left;
 	font-family: 'PT Mono' !important;
 }
-code span{
+code pre span{
 	display: inline-block;
 
 }

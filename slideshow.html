@@ -27,19 +27,23 @@
 	  			<h2> How to use </h2>
 	  			Download source code <a class="description-link" href="https://github.com/cakeinpanic/modBasedStuff">on github</a> and include it into your html file.<br>
 	  			Before DOM:
-	  			<code>&#60;link rel="stylesheet" type="text/css" href="slideshowStyle.css"&#62;</code>
+	  			<code><pre>
+&#60;<span class="code-tag">link</span> <span class="code-attribute">rel</span>=<span class="code-value">"stylesheet"</span> <span class="code-attribute">type</span>=<span class="code-value">"text/css"</span> <span class="code-attribute">href</span>=<span class="code-value">"slideshowStyle.css"</span>&#62;</pre>
+				</code>
 	  			After DOM:
-<code>&#60;script src="mod.min.js" type="text/javascript"&#62;&#60;/script&#62;
-&#60;script src="slideshow.js" type="text/javascript"&#62;&#60;/script&#62;
-</code>
+				<code><pre>
+&#60;<span class="code-tag">script</span> <span class="code-attribute">src</span>=<span class="code-value">"mod.min.js"</span> <span class="code-attribute">type</span>=<span class="code-value">"text/javascript"</span>&#62;&#60;<span class="code-tag">/script</span>&#62;
+&#60;<span class="code-tag">script</span> <span class="code-attribute">src</span>=<span class="code-value">"slideshow.js"</span> <span class="code-attribute">type</span>=<span class="code-value">"text/javascript"</span>&#62;&#60;<span class="code-tag">/script</span>&#62;</pre>
+				</code>
 Then just define your image urls, their thumbnails (for non-fullscreen mode) and titles divided by |. If image doesn't have any title – just leave its space empty. 
 And enjoy!
-<code>&#60;div <span class="code-attribute">class</span>=<span class="code-value">"item-slideshow"</span>
+				<code><pre>
+&#60;<span class="code-tag">div</span> <span class="code-attribute">class</span>=<span class="code-value">"item-slideshow"</span>
      <span class="code-attribute">smallImgArray</span>=<span class="code-value">"1.jpg,2.jpg,3.jpg"</span> 
      <span class="code-attribute">bigImgArray</span>=<span class="code-value">"1_big.jpg,2_big.jpg,3_big.jpg"</span> 
      <span class="code-attribute">imgTitles</span>=<span class="code-value">"Bob|Alice||"</span> 
-&#60;/div&#62;
-</code>
+&#60;<span class="code-tag">/div</span>&#62;</pre>
+				</code>
 				If you want to stylize slideshow- it's fully customizable by css.
 				<h2> Usecases </h2>
 				<p>This slideshow is now sucsessfully being used on <a class="description-link" href="http://kudago.com" target="_blank">kudago.com</a> for all items. <a class="description-link" href="http://kudago.com/new-york/place/erata-galleries/" target="_blank">For example</a>.<br>
