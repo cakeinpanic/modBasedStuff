@@ -27,7 +27,11 @@
 }
 .circle.counter
 {
-	color: rgb(129, 114, 114);
+	color: rgb(80, 2, 2);
+	padding-bottom: 8px;
+	vertical-align: middle;
+
+
 }
 .circle .digit
 {
@@ -38,20 +42,31 @@
 	color: white;
 	font-size:20px;
 	box-shadow:none;
+	vertical-align: middle;
 }
-
+.digit.red{
+	background: red;
+}
+.digit.blue{
+	background: blue;
+}
+.digit.green{
+	background: green;
+}
 .circle .countdown-date{
+	display:inline-block;
 	font-style: normal;
-	font-size: 20px;
-	text-shadow: 0 0 5px rgba(0, 0, 0, .5);
+	font-size: 24px;
+	margin-bottom: 0;
+	margin-right: 5px;
+	vertical-align: middle;
+	
 }
 
 .counter
 {
 	cursor: default;
 	position:relative;
-	font-family: 'Lato', serif;
-	font-weight: 300;
 	color: white;
 	margin:0 auto;
 	text-align: center;
@@ -59,7 +74,9 @@
 
 	padding: 10px 0 	20px;
 
-	background-color: rgba(0,0,0,.2);
+	background: rgba(216, 51, 51, 0.5);
+	border-radius: 10px;
+	
 }
 .counter ul{
 	line-height: 2;
@@ -86,7 +103,7 @@
 .countdown-note{
 	margin-right: 4px;
 	display:inline-block;
-	font-style: italic;
+	letter-spacing: 1px;
 }
 
 .divider {

@@ -1,10 +1,14 @@
-var Counter= Mod.extend({
+var Countdown= Mod.extend({
 	date: null,
 	currentDays: {
 		value:-1,
 		change: function(value){
 			if (this.inited){
-
+				if (value<1){
+					for(var i=this.$daysAndRelated.length; i--; i>-1)
+						this.$daysAndRelated[i].style.display="none";
+					return;
+				}
 				if (value/100 < 1)
 					this.$daysFirst.hide();
 				else
@@ -52,9 +56,10 @@ var Counter= Mod.extend({
 
 		var currentDate = new Date();
 		var diff= this.targetDate- currentDate;
-		if (diff<0) { this.timerState="stopped"; return;}
-		var seconds_left=(diff/1000);
 
+		if (diff<0) { this.timerState="stopped"; return;}
+
+		var seconds_left=(diff/1000);
 		this.currentDays = parseInt(seconds_left / 86400);
 		seconds_left = seconds_left % 86400;
 
@@ -70,7 +75,6 @@ var Counter= Mod.extend({
 		values:{
 			init:{
 				before: function(){
-					console.log("init main");
 					if (this.date=="midnight")
 					{
 						var currentDate=new Date();
@@ -92,15 +96,13 @@ var Counter= Mod.extend({
 			},
 			working:{
 				before: function(){
-					console.log("hidden");
+
 					this.update();
-					this.removeAttribute("hidden");
-					this._intervalId=setInterval(this.update, 1000)
+					this._intervalId=setInterval(this.update.bind(this), 1000)
 				}
 			},
 			stopped:{
 				before: function(){
-					console.log("stopped");
 					$(this).hide(); clearInterval(this._intervalId);
 				}
 			}
@@ -108,19 +110,20 @@ var Counter= Mod.extend({
 	}
 });
 
-var EventCounter= Counter.extend({
+var EventCountdown= Countdown.extend({
 	currentDays: {
+		value: -1,
 		change: function(value){
-
 			if (this.inited){
 				if (value<1){
-					console.log(this.$daysAndRelated);
 					for(var i=this.$daysAndRelated.length; i--; i>-1)
 						this.$daysAndRelated[i].style.display="none";
 					return;
 				}
 
-				Counter.properties.currentDays.change.apply(this, [value]);
+				Countdown.properties.currentDays.change.apply(this, [value]);
+				if (value > 1) this.$daysAndRelated[1].innerHTML="days";
+				else this.$daysAndRelated[1].innerHTML="day";
 			}
 		}
 	},
@@ -133,7 +136,7 @@ var EventCounter= Counter.extend({
 						this.$hoursAndRelated[i].style.display="none";
 					return;
 				}
-				Counter.properties.currentHours.change.apply(this, [value]);
+				Countdown.properties.currentHours.change.apply(this, [value]);
 			}
 		}
 	},
@@ -156,14 +159,20 @@ var EventCounter= Counter.extend({
 
 					this.$daysAndRelated= this.querySelectorAll('.days');
 					this.$hoursAndRelated= this.querySelectorAll('.hours');
-					Counter.properties.timerState.values.init.before.apply(this);
-
-
+					Countdown.properties.timerState.values.init.before.value.apply(this);
+				},
+				after: function(){
+					if (this.currentDays > 1) this.$daysAndRelated[1].innerHTML="days";
+					else this.$daysAndRelated[1].innerHTML="day";
+					Countdown.properties.timerState.values.init.after.value.apply(this);
 				}
+
 			}
+
 		}
 	}
 });
+
 
 var Digit = Mod.extend({
 	init: function(){
@@ -178,17 +187,15 @@ var Digit = Mod.extend({
 		$(this).hide();
 	},
 	digitStates:{
-			value: "init",
-			values:{
-				init:{
-					before: function(){
-					}
+		value: "init",
+		values:{
+			init:{
+				before: function(){
 				}
 			}
 		}
-	})
-
+	}
+})
 
 Digit.register('digit',{selector: ".digit"});
-EventCounter.register('counter',{selector: ".counter"
-	});
+EventCountdown.register('counter',{selector: ".counter"});
