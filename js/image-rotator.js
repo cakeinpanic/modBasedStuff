@@ -2,8 +2,8 @@ var BaseRotator = Mod.extend({
 	slides: [],
 	animating: null,
 	idle: null,
-	animationLenght: .7,
-	slideshowLength: 1,
+	animationLenght: 1,
+	idleLength: 1,
 	resetAimationLenght: .35,
 	indicateSlides: null,
 	currentSlide: {
@@ -48,8 +48,9 @@ var BaseRotator = Mod.extend({
 
 					this.loaded = new Array(this.slides.length);
 
-					if (this.animating) this.animationLenght = this.animating;
-					this.slideshowLength = this.idle || this.slideshowLength;
+					this.animationLenght = this.animating || this.animationLength;					
+					this.idleLength = this.idle || this.idleLength;
+					
 
 
 					if (this.indicateSlides && this.slides.length>1 ) {
@@ -111,7 +112,7 @@ var BaseRotator = Mod.extend({
 					this.stop();
 					if (this._mouseOn) {
 		
-						this._postponeStartTimeout = setTimeout(function() {this.start();this.next();}.bind(this), this.slideshowLength*500);
+						this._postponeStartTimeout = setTimeout(function() {this.start();this.next();}.bind(this), this.idleLength*500);
 					}
 
 				},
@@ -196,7 +197,7 @@ var BaseRotator = Mod.extend({
 				before: function() {
 	
 					clearTimeout(this._animateTimeout);
-					this._slideshowTimeout = setTimeout(this.next.bind(this), this.slideshowLength*1000);
+					this._slideshowTimeout = setTimeout(this.next.bind(this), this.idleLength*1000);
 
 					this.$currentSlide.style.backgroundImage = this.$nextSlide.style.backgroundImage;
 
@@ -315,8 +316,8 @@ var MapRotator = BaseRotator.extend({
 		}
 	},
 	stopOnLast: function() {
-	    this._tempIdleLength = this.slideshowLength;
-		this.slideshowLength = this.stopLength;
+	    this._tempIdleLength = this.idleLength;
+		this.idleLength = this.stopLength;
 
 		this.firstInit();
 		this.start();
@@ -325,7 +326,7 @@ var MapRotator = BaseRotator.extend({
 	resetToNormal: function() {
 		if (this.datamap) {
 			this.stopping = false;
-			this.slideshowLength = this._tempIdleLength;
+			this.idleLength = this._tempIdleLength;
 			this.next();
 			this.stop();
 		}
