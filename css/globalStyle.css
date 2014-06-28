@@ -1,28 +1,33 @@
 //@import url(http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic);
-
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=latin,cyrillic-ext);
 html, body
 {
 	height:100%;
 }
 
 body{
-	background: url("../assets/concrete_wall.png");
+	//background: url("../assets/concrete_wall.png");
+	background: #FFFCDC;
 	margin:0;
 	min-height: 100%;
+	text-align: center;
 
+	font-family: 'PT Sans Narrow', sans-serif;
 }
 .github-btn{
-	float: right;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 10px;
 }
 
 .wrapper
 {
-	position:relative;
-	margin: 0 auto;
+	
+	text-align: center;
+	margin: 150px auto;
 	min-height: 100%;
-	max-width:60%;
 	padding-top: 1px;
-	background: rgba(0,0,0,.2);
+	display: inline-block;
 
 }
 .counter-wrapper{
@@ -30,33 +35,23 @@ body{
 }
 
 .description{
-	font-family: 'Lato', serif;
 	font-weight: 300;
-	font-size:16px;
+	
 	line-height:20px;
-	color: white;
-	width:600px;
-	max-width:100%;
 	padding:11px;
 	margin:0 auto;
-	background-color: rgb(24, 23, 23);
+	color: #113645;
+	margin-bottom: 30px;
+	display:block;
+	font-size:21px;
+	//background: rgba(17,54,69,.4);//#113645;
+	border-radius: 10px;
+	width:470px;
 }
-.index-description
-{
-	position:absolute;
-	top:50px;
-	padding: 40px 40px 100px;
-	left:50px;
-	right: 50px;
 
-
-}
-.countdown-descripton{
-	margin-top:50px;
-}
 .description a{
-	color: white;
-	font-style: italic;
+	//color: white;
+	color: #113645;
 }
 .description span{
 	font-weight: 400;
@@ -72,3 +67,45 @@ body{
 	right:10px;
 }
 
+.box{
+	width:150px;
+	height: 150px;
+	border-radius: 14px;
+	display: inline-block;
+	background-color: blue;
+	vertical-align: middle;
+	text-align: center;
+	line-height: 150px;
+	position: relative;
+	font-size: 25px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.box+.box{
+	margin-left: 40px;;
+}
+.box a{
+	position: absolute;
+	top:0;
+	bottom:0;
+	right:0;
+	left: 0;
+
+}
+
+.box.rotator{
+	background-color: #C57688;
+	background-image: url('../assets/rotator/rotator_title.png');
+	background-size: contain;
+
+}
+.box.slideshow{
+	background-color: #66B3A7;
+	background-image: url('../assets/slideshow/slideshow_title.png');
+	background-size:70%;
+}
+.box.counter{
+	background-color: #EFC879;
+	background-image: url('../assets/counter/counter_title.png');
+	background-size: 62%;
+}
