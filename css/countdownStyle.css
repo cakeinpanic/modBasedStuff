@@ -12,11 +12,11 @@
 	border-radius: 2px;
 	text-shadow: 0 1px 1px black;
 	font-style: normal;
-	background: linear-gradient(to bottom, rgb(49, 48, 48), rgb(32, 31, 31));
-	background: -webkit-linear-gradient(to bottom, rgb(49, 48, 48), rgb(32, 31, 31));
-	background: -moz-linear-gradient(to bottom, rgb(49, 48, 48), rgb(32, 31, 31));
-	background: -o-linear-gradient(to bottom, rgb(49, 48, 48), rgb(32, 31, 31));
-
+	background: linear-gradient(bottom, rgb(49, 48, 48), rgb(32, 31, 31));
+	background: -webkit-linear-gradient(bottom, rgb(49, 48, 48), rgb(32, 31, 31));
+	background: -moz-linear-gradient(bottom, rgb(49, 48, 48), rgb(32, 31, 31));
+	background: -o-linear-gradient(bottom, rgb(49, 48, 48), rgb(32, 31, 31));
+	
 	vertical-align: middle;
 
 	position: relative;
