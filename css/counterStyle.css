@@ -56,7 +56,7 @@
 	background: rgb(169, 226, 124);
 }
 
-.circle .countdown-date{
+.circle .counter-date{
 	display:inline-block;
 	font-style: normal;
 	font-size: 18px;
@@ -104,7 +104,7 @@
 .conuter ul li:last-child{
 	margin-right: 0;
 }
-.countdown-note{
+.counter-note{
 	margin-right: 4px;
 	display:inline-block;
 	letter-spacing: 1px;
@@ -118,7 +118,7 @@
 	font-weight: 700;
 	text-shadow:0 0 5px rgba(0, 0, 0, .8);
 }
-.countdown-date
+.counter-date
 {
 	display: block;
 	margin-bottom: 10px;

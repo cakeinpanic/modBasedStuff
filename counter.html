@@ -1,22 +1,22 @@
 <!doctype html>
 <meta charset="utf-8">
  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-
-<title>Countdown</title>
+<link href="assets/counter/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<title>Counter</title>
 <link rel="stylesheet" type="text/css" href="css/slideshowPageStyle.css">
-<link rel="stylesheet" type="text/css" href="css/countdownStyle.css">
+<link rel="stylesheet" type="text/css" href="css/counterStyle.css">
 <link rel="stylesheet" type="text/css" href="css/counterPageStyle.css">
 <body>
 	<div class="wrapper counter-wrapper">
 		<img src="assets/counter/counter_title.png" class="page-title"></img>
 		<div class="counter" date="10/10/2014">
-			<span class="countdown-note countdown-date"> Till 10/10/2014: </span>
+			<span class="counter-note counter-date"> Till 10/10/2014: </span>
 			 <ul class="days">
 				<li class="digit">1</li>
 				<li class="digit">1</li>
 				<li class="digit">2</li>
 			</ul>
-			<span class="countdown-note days">days,</span>
+			<span class="counter-note days">days,</span>
 			<ul class="hours">
 				<li class="digit">0</li>
 				<li class="digit">4</li>
@@ -32,12 +32,12 @@
 		</div>
 
 		<div class="counter" date="10/1/2014 13:00:12">
-			<span class="countdown-note countdown-date"> Till 10/1/2014 13:00:12: </span>
+			<span class="counter-note counter-date"> Till 10/1/2014 13:00:12: </span>
 			 <ul class="days">
 				<li class="digit" >1</li>
 				<li class="digit" >1</li>
 				<li class="digit" >2</li>
-			</ul> <span class="countdown-note days">days,</span>
+			</ul> <span class="counter-note days">days,</span>
  			<ul class="hours">
 				<li class="digit" >0</li>
 				<li class="digit" >4</li>
@@ -56,12 +56,12 @@
 
 
 		<div class="counter circle" date="midnight">
-			<span class="countdown-note countdown-date"> Till midnight: </span>
+			<span class="counter-note counter-date"> Till midnight: </span>
 			 <ul class="days">
 				<li class="digit">1</li>
 				<li class="digit">1</li>
 				<li class="digit">2</li>
-			</ul><span class="countdown-note days">days,</span><ul class="hours">
+			</ul><span class="counter-note days">days,</span><ul class="hours">
 				<li class="digit blue">0</li>
 				<li class="digit green">4</li>
 			</ul><span class="divider hours">:</span><ul class="minutes">
@@ -97,23 +97,23 @@
 				<code><pre>
 &#60;<span class="code-tag">div</span> <span class="code-attribute">class</span>=<span class="code-value">"counter"</span> <span class="code-attribute">date</span>=<span class="code-value">"10/1/2014 13:00:12"</span>&#62;
     &#60;<span class="code-tag">span</span>&#62;Till my birthday party!&#60;<span class="code-tag">/span</span>&#62;
-    &#60;<span class="code-tag">ul</span> <span class="code-attribute">class</span>="days"&#62;
+    &#60;<span class="code-tag">ul</span> <span class="code-attribute">class</span>="<span class="code-value">days</span>"&#62;
         &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>&#62;&#60;<span class="code-tag">/li</span>&#62;
         &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>&#62;&#60;<span class="code-tag">/li</span>&#62;
         &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>&#62;&#60;<span class="code-tag">/li</span>&#62;
     &#60;<span class="code-tag">/ul</span>&#62;
     &#60;<span class="code-tag">span</span> <span class="code-attribute">class</span>="<span class="code-value">days</span>"&#62;days,&#60;<span class="code-tag">/span</span>&#62;
-    &#60;<span class="code-tag">ul</span> <span class="code-attribute">class</span>="hours"&#62;
+    &#60;<span class="code-tag">ul</span> <span class="code-attribute">class</span>="<span class="code-value">hours</span>"&#62;
         &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>&#62;&#60;<span class="code-tag">/li</span>&#62;
         &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>&#62;&#60;<span class="code-tag">/li</span>&#62;
     &#60;<span class="code-tag">/ul</span>&#62;
     &#60;<span class="code-tag">span</span> <span class="code-attribute">class</span>="<span class="code-value">divider hours</span>"&#62;:&#60;<span class="code-tag">/span</span>&#62;
-    &#60;<span class="code-tag">ul</span> <span class="code-attribute">class</span>="minutes"&#62;
+    &#60;<span class="code-tag">ul</span> <span class="code-attribute">class</span>="<span class="code-value">minutes</span>"&#62;
         &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>&#62;&#60;<span class="code-tag">/li</span>&#62;
         &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>&#62;&#60;<span class="code-tag">/li</span>&#62;
     &#60;<span class="code-tag">/ul</span>&#62;
     &#60;<span class="code-tag">span</span> <span class="code-attribute">class</span>="<span class="code-value">divider minutes</span>"&#62;:&#60;<span class="code-tag">/span</span>&#62;
-    &#60;<span class="code-tag">ul</span> <span class="code-attribute">class</span>="seconds"&#62;
+    &#60;<span class="code-tag">ul</span> <span class="code-attribute">class</span>="<span class="code-value">seconds</span>"&#62;
         &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>&#62;&#60;<span class="code-tag">/li</span>&#62;
         &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>&#62;&#60;<span class="code-tag">/li</span>&#62;
     &#60;<span class="code-tag">/ul</span>&#62;

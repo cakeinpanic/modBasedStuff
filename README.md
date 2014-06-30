@@ -5,7 +5,7 @@ You can see demos here:
 <li>
 <a href="http://cakeinpanic.github.io/modBasedStuff/image-rotator.html">image rotator</a></li>
 <li>
-<a href="http://cakeinpanic.github.io/modBasedStuff/countdown.html">time countdown</a></li>
+<a href="http://cakeinpanic.github.io/modBasedStuff/counter.html">time counter</a></li>
 </ul>
 <li><a href="http://cakeinpanic.github.io/modBasedStuff/slideshow.html">slideshow</a></li>
 </ul>
