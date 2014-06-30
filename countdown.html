@@ -12,23 +12,22 @@
 		<div class="counter" date="10/10/2014">
 			<span class="countdown-note countdown-date"> Till 10/10/2014: </span>
 			 <ul class="days">
-				<li class="digit" >1</li>
-				<li class="digit" >1</li>
-				<li class="digit" >2</li>
-			</ul> <span class="countdown-note days">days,</span>
- 			<ul class="hours">
-				<li class="digit" >0</li>
-				<li class="digit" >4</li>
+				<li class="digit">1</li>
+				<li class="digit">1</li>
+				<li class="digit">2</li>
+			</ul>
+			<span class="countdown-note days">days,</span>
+			<ul class="hours">
+				<li class="digit">0</li>
+				<li class="digit">4</li>
 			</ul>
 			<span class="divider hours">:</span>
- 			<ul class="minutes">
+			<ul class="minutes">
 				<li class="digit">3</li>
-				<li class="digit" >3</li>
-			</ul>
-			<span class="divider minutes">:</span>
-			<ul class="seconds">
 				<li class="digit">3</li>
-				<li class="digit" >3</li>
+			</ul><span class="divider minutes">:</span><ul class="seconds">
+				<li class="digit">3</li>
+				<li class="digit">3</li>
 			</ul>
 		</div>
 
@@ -62,18 +61,13 @@
 				<li class="digit">1</li>
 				<li class="digit">1</li>
 				<li class="digit">2</li>
-			</ul> <span class="countdown-note days">days,</span>
-				<ul class="hours">
+			</ul><span class="countdown-note days">days,</span><ul class="hours">
 				<li class="digit blue">0</li>
 				<li class="digit green">4</li>
-			</ul>
-			<span class="divider hours">:</span>
-				<ul class="minutes">
+			</ul><span class="divider hours">:</span><ul class="minutes">
 				<li class="digit red">3</li>
 				<li class="digit green">3</li>
-			</ul>
-			<span class="divider minutes">:</span>
-			<ul class="seconds">
+			</ul><span class="divider minutes">:</span><ul class="seconds">
 				<li class="digit blue">3</li>
 				<li class="digit red">3</li>
 			</ul>
@@ -98,39 +92,38 @@
 &#60;<span class="code-tag">script</span> <span class="code-attribute">src</span>=<span class="code-value">"mod.min.js"</span> <span class="code-attribute">type</span>=<span class="code-value">"text/javascript"</span>&#62;&#60;<span class="code-tag">/script</span>&#62;
 &#60;<span class="code-tag">script</span> <span class="code-attribute">src</span>=<span class="code-value">"counter.js"</span> <span class="code-attribute">type</span>=<span class="code-value">"text/javascript"</span>&#62;&#60;<span class="code-tag">/script</span>&#62;</pre>
 				</code>
-<br>
+				Counter is fully customizable from outside. Just follow simple layout and don't forget to set two nubmers for minutes, hours and seconds and three numbers for days event if you don't have days at all.<br>
+				Date can be set in <a class="description-link" href="http://www.w3schools.com/jsref/jsref_parse.asp">parsable format</a> or using keyword "midnight". 
 				<code><pre>
 &#60;<span class="code-tag">div</span> <span class="code-attribute">class</span>=<span class="code-value">"counter"</span> <span class="code-attribute">date</span>=<span class="code-value">"10/1/2014 13:00:12"</span>&#62;
-&#60;span class="countdown-note countdown-date"> Till 10/10/2014: &#60;/span&#62;
- &#60;ul class="days"&#62;
-    &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>  &#62;&#60;<span class="code-tag">/li</span>&#62;
-   &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>  &#62;1&#60;<span class="code-tag">/li</span>&#62;
-   &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>  &#62;2&#60;<span class="code-tag">/li</span>&#62;
-   &#60;/ul&#62;
-  &#60;span class="countdown-note days"&#62;days,&#60;/span&#62;
-&#60;ul class="hours"&#62;
-   &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>  &#62;0&#60;<span class="code-tag">/li</span>&#62;
-   &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>  &#62;4&#60;<span class="code-tag">/li</span>&#62;
-   &#60;/ul&#62;
-   &#60;span class="divider hours"&#62;:&#60;/span&#62;
-   &#60;ul class="minutes"&#62;
-   &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span> &#62;3&#60;<span class="code-tag">/li</span>&#62;
-&#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>  &#62;3&#60;<span class="code-tag">/li</span>&#62;
-    &#60;/ul&#62;
-    &#60;span class="divider minutes"&#62;:&#60;/span&#62;
-    &#60;ul class="seconds"&#62;
-&#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span> &#62;3&#60;<span class="code-tag">/li</span>&#62;
-    &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>  &#62;3
-    &#60;<span class="code-tag">/li</span>&#62;
-    &#60;/ul&#62;
-
-
-     &#60;<span class="code-tag">/div</span>&#62;</pre>
+    &#60;<span class="code-tag">span</span>&#62;Till my birthday party!&#60;<span class="code-tag">/span</span>&#62;
+    &#60;<span class="code-tag">ul</span> <span class="code-attribute">class</span>="days"&#62;
+        &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>&#62;&#60;<span class="code-tag">/li</span>&#62;
+        &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>&#62;&#60;<span class="code-tag">/li</span>&#62;
+        &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>&#62;&#60;<span class="code-tag">/li</span>&#62;
+    &#60;<span class="code-tag">/ul</span>&#62;
+    &#60;<span class="code-tag">span</span> <span class="code-attribute">class</span>="<span class="code-value">days</span>"&#62;days,&#60;<span class="code-tag">/span</span>&#62;
+    &#60;<span class="code-tag">ul</span> <span class="code-attribute">class</span>="hours"&#62;
+        &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>&#62;&#60;<span class="code-tag">/li</span>&#62;
+        &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>&#62;&#60;<span class="code-tag">/li</span>&#62;
+    &#60;<span class="code-tag">/ul</span>&#62;
+    &#60;<span class="code-tag">span</span> <span class="code-attribute">class</span>="<span class="code-value">divider hours</span>"&#62;:&#60;<span class="code-tag">/span</span>&#62;
+    &#60;<span class="code-tag">ul</span> <span class="code-attribute">class</span>="minutes"&#62;
+        &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>&#62;&#60;<span class="code-tag">/li</span>&#62;
+        &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>&#62;&#60;<span class="code-tag">/li</span>&#62;
+    &#60;<span class="code-tag">/ul</span>&#62;
+    &#60;<span class="code-tag">span</span> <span class="code-attribute">class</span>="<span class="code-value">divider minutes</span>"&#62;:&#60;<span class="code-tag">/span</span>&#62;
+    &#60;<span class="code-tag">ul</span> <span class="code-attribute">class</span>="seconds"&#62;
+        &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>&#62;&#60;<span class="code-tag">/li</span>&#62;
+        &#60;<span class="code-tag">li</span> <span class="code-attribute">class</span>=<span class="code-value">"digit"</span>&#62;&#60;<span class="code-tag">/li</span>&#62;
+    &#60;<span class="code-tag">/ul</span>&#62;
+&#60;<span class="code-tag">/div</span>&#62;</pre>
 				</code>
-				If you want to stylize slideshow- it's fully customizable by css.
+
 				<h2> Usecases </h2>
-				<p>This slideshow is now sucsessfully being used on <a class="description-link" href="http://kudago.com" target="_blank">kudago.com</a> for all items. <a class="description-link" href="http://kudago.com/new-york/place/erata-galleries/" target="_blank">For example</a>.<br>
-				It's quite comfortable to use this component in templat-based projects (like Django, Jinja an so on)
+				<p>This counter is now sucsessfully being used on <a class="description-link" href="http://kudago.com" target="_blank">kudago.com</a> for all oncoming events and contests. <a class="description-link" href="http://kudago.com/spb/event/smeshannye-chuvstva-v-teatre-im-lensoveta/" target="_blank">For example</a>.<br>
+				It's quite comfortable to use this component in template-based projects (like Django, Jinja an so on).<br>
+				Big plus is the fact that counter is fully customizable from outside HTML, plugin just collects information with querySelectors by classes.
 				</p>
 		</div>
 

@@ -103,7 +103,8 @@ var Countdown= Mod.extend({
 			},
 			stopped:{
 				before: function(){
-					$(this).hide(); clearInterval(this._intervalId);
+					this.style.display="none";
+					clearInterval(this._intervalId);
 				}
 			}
 		}
@@ -184,7 +185,7 @@ var Digit = Mod.extend({
 		}
 	},
 	hide: function(){
-		$(this).hide();
+		this.style.display="none";
 	},
 	digitStates:{
 		value: "init",
