@@ -1,17 +1,14 @@
 .image-rotator
 {
-	width: 600px;
-	height: 400px;
+	width:100%;
+	height:100%;
 	position: relative;
-	//outline: 1px solid lightGrey;
-	box-shadow: 1px 1px 3px 2px rgba(0,0,0,.4);
-	margin: 35px auto 6px;
 
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
 }
-.inside-pic
+.image-rotator-inside-pic
 {
 	width: inherit;
 	height: inherit;
@@ -21,9 +18,9 @@
 	background-repeat: no-repeat;
 
 }
-.global-preloader{
+.image-rotator-indicator-wrapper{
 	position:absolute;
-	background-color: red;
+	background-color: black;
 	opacity: .3;
 	height: 7px;
 
@@ -32,8 +29,8 @@
 	width: 100%;
 }
 
-.preloader{
-	background-color: blue;
+.image-rotator-indicator{
+	background-color: white;
 	height: 7px;
 	position:absolute;
 	bottom:0;

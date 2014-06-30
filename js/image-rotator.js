@@ -2,8 +2,8 @@ var BaseRotator = Mod.extend({
 	slides: [],
 	animating: null,
 	idle: null,
-	animationLenght: .7,
-	slideshowLength: 1,
+	animationLenght: 1,
+	idleLength: 1,
 	resetAimationLenght: .35,
 	indicateSlides: null,
 	currentSlide: {
@@ -48,16 +48,15 @@ var BaseRotator = Mod.extend({
 
 					this.loaded = new Array(this.slides.length);
 
-					if (this.animating) this.animationLenght = this.animating;
-					this.slideshowLength = this.idle || this.slideshowLength;
-
-
+					this.animationLenght = this.animating || this.animationLength;					
+					this.idleLength = this.idle || this.idleLength;
+					
 					if (this.indicateSlides && this.slides.length>1 ) {
 						this.$currentSlideIndicator = document.createElement("div");
-						this.$currentSlideIndicator.className = "preloader";
+						this.$currentSlideIndicator.className = "image-rotator-indicator";
 
 						this.$currentSlideWrapper = document.createElement("div");
-						this.$currentSlideWrapper.className = "global-preloader";
+						this.$currentSlideWrapper.className = "image-rotator-indicator-wrapper";
 
 						this.$currentSlideWrapper.appendChild(this.$currentSlideIndicator);
 						this.appendChild(this.$currentSlideWrapper);
@@ -110,8 +109,8 @@ var BaseRotator = Mod.extend({
 					this.toStart();
 					this.stop();
 					if (this._mouseOn) {
-		
-						this._postponeStartTimeout = setTimeout(function() {this.start();this.next();}.bind(this), this.slideshowLength*500);
+						this._postponeStartTimeout = setTimeout(function() {this.start();this.next();}.bind(this), this.idleLength*500);
+
 					}
 
 				},
@@ -131,7 +130,6 @@ var BaseRotator = Mod.extend({
 				},
 				after: function() {
 					clearTimeout(this._postponeStartTimeout);
-
 				}
 			},
 
@@ -174,7 +172,6 @@ var BaseRotator = Mod.extend({
 				mouseenter: function() {
 					this._mouseOn = true;
 				}
-
 			},
 
 			animating:{
@@ -196,7 +193,8 @@ var BaseRotator = Mod.extend({
 				before: function() {
 	
 					clearTimeout(this._animateTimeout);
-					this._slideshowTimeout = setTimeout(this.next.bind(this), this.slideshowLength*1000);
+					this._slideshowTimeout = setTimeout(this.next.bind(this), this.idleLength*1000);
+
 
 					this.$currentSlide.style.backgroundImage = this.$nextSlide.style.backgroundImage;
 
@@ -219,7 +217,7 @@ var BaseRotator = Mod.extend({
 				before: function() {
 	
 					clearTimeout(this._animateTimeout);
-					curD=new Date().getTime();
+					curD = new Date().getTime();
 
 					this.stop();
 					this.toStart();
@@ -262,8 +260,8 @@ var BaseRotator = Mod.extend({
 			this.$nextSlide = document.createElement("div");
 			this.$currentSlide = document.createElement("div");
 
-			this.$currentSlide.className += "inside-pic";
-			this.$nextSlide.className += "inside-pic";
+			this.$currentSlide.classList.add("image-rotator-inside-pic");
+			this.$nextSlide.classList.add("image-rotator-inside-pic");
 
 			this.setTransition(this.$currentSlide,this.animationLenght+"s opacity");
 			this.setTransition(this.$nextSlide,this.animationLenght+"s opacity");
@@ -315,8 +313,9 @@ var MapRotator = BaseRotator.extend({
 		}
 	},
 	stopOnLast: function() {
-	    this._tempIdleLength = this.slideshowLength;
-		this.slideshowLength = this.stopLength;
+	    this._tempIdleLength = this.idleLength;
+		this.idleLength = this.stopLength;
+
 
 		this.firstInit();
 		this.start();
@@ -325,7 +324,8 @@ var MapRotator = BaseRotator.extend({
 	resetToNormal: function() {
 		if (this.datamap) {
 			this.stopping = false;
-			this.slideshowLength = this._tempIdleLength;
+			this.idleLength = this._tempIdleLength;
+
 			this.next();
 			this.stop();
 		}

@@ -1,8 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
-
 .digit{
 	color: white;
-	font-family: 'Lato', serif;
 	font-weight: 300;
 	font-size: 15px;
 	text-align: center;
@@ -12,10 +9,11 @@
 	border-radius: 2px;
 	text-shadow: 0 1px 1px black;
 	font-style: normal;
-	background: linear-gradient(to bottom, rgb(49, 48, 48), rgb(32, 31, 31));
-
+	background: linear-gradient(bottom, rgb(49, 48, 48), rgb(32, 31, 31));
+	background: -webkit-linear-gradient(bottom, rgb(49, 48, 48), rgb(32, 31, 31));
+	background: -moz-linear-gradient(bottom, rgb(49, 48, 48), rgb(32, 31, 31));
+	background: -o-linear-gradient(bottom, rgb(49, 48, 48), rgb(32, 31, 31));
 	vertical-align: middle;
-
 	position: relative;
 	float: left;
 	width: 16px;
@@ -23,43 +21,19 @@
 	font-size: 16px;
 	line-height: 29px;
 	box-shadow: 0 0 5px rgba(0, 0, 0, .5);
-
 }
-.circle.counter
-{
-	color: rgb(129, 114, 114);
-}
-.circle .digit
-{
-	border-radius: 15px;
-	width: 30px;
-	height:30px;
-	background: rgb(129, 114, 114);
-	color: white;
-	font-size:20px;
-	box-shadow:none;
-}
-
-.circle .countdown-date{
-	font-style: normal;
-	font-size: 20px;
-	text-shadow: 0 0 5px rgba(0, 0, 0, .5);
-}
-
 .counter
 {
 	cursor: default;
 	position:relative;
-	font-family: 'Lato', serif;
-	font-weight: 300;
 	color: white;
 	margin:0 auto;
 	text-align: center;
 	margin-top:20px;
-
-	padding: 10px 0 	20px;
-
-	background-color: rgba(0,0,0,.2);
+	padding: 10px 0 20px;
+	background: rgba(216, 51, 51, 0.5);
+	border-radius: 10px;
+	
 }
 .counter ul{
 	line-height: 2;
@@ -83,12 +57,11 @@
 .conuter ul li:last-child{
 	margin-right: 0;
 }
-.countdown-note{
+.counter-note{
 	margin-right: 4px;
 	display:inline-block;
-	font-style: italic;
+	letter-spacing: 1px;
 }
-
 .divider {
 	padding-right: 2px;
 	width:1px;
@@ -97,9 +70,4 @@
 	font-weight: 700;
 	text-shadow:0 0 5px rgba(0, 0, 0, .8);
 }
-.countdown-date
-{
-	display: block;
-	margin-bottom: 10px;
-	font-weight: 400;
-}
+
