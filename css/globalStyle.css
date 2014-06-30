@@ -97,9 +97,7 @@ code pre span{
 {
 	text-align: center;
 	margin: 150px auto;
-	min-height: 100%;
 	width:650px;
-	padding-top: 1px;
 	display: inline-block;
 	position: relative;
 }
