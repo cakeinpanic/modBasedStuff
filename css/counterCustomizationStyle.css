@@ -1,0 +1,42 @@
+.circle.counter
+{
+	color: rgb(80, 2, 2);
+	padding-bottom: 8px;
+	vertical-align: middle;
+	font-family: 'PT Mono';
+}
+.circle .digit
+{
+	border-radius: 15px;
+	width: 30px;
+	height:30px;
+	color: white;
+	font-size:20px;
+	box-shadow:none;
+	vertical-align: middle;
+	font-family: 'PT Mono';
+}
+.digit.red{
+	background: rgb(240, 82, 82);
+}
+.digit.blue{
+	background: rgb(35, 139, 221);
+}
+.digit.green{
+	background: rgb(169, 226, 124);
+}
+
+.circle .counter-date{
+	display:inline-block;
+	font-style: normal;
+	font-size: 18px;
+	margin-bottom: 0;
+	margin-right: 0;
+	line-height: 29px;
+	vertical-align: middle;
+}
+.counter-date
+{
+	display: block;
+	margin-bottom: 10px;
+}

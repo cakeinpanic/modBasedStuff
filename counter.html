@@ -3,11 +3,13 @@
  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <link href="assets/counter/favicon.ico" rel="shortcut icon" type="image/x-icon">
 <title>Counter</title>
-<link rel="stylesheet" type="text/css" href="css/slideshowPageStyle.css">
+
+<link rel="stylesheet" type="text/css" href="css/globalStyle.css">
 <link rel="stylesheet" type="text/css" href="css/counterStyle.css">
 <link rel="stylesheet" type="text/css" href="css/counterPageStyle.css">
+<link rel="stylesheet" type="text/css" href="css/counterCustomizationStyle.css">
 <body>
-	<div class="wrapper counter-wrapper">
+	<div class="wrapper">
 		<img src="assets/counter/counter_title.png" class="page-title"></img>
 		<div class="counter" date="10/10/2014">
 			<span class="counter-note counter-date"> Till 10/10/2014: </span>
@@ -34,23 +36,23 @@
 		<div class="counter" date="10/1/2014 13:00:12">
 			<span class="counter-note counter-date"> Till 10/1/2014 13:00:12: </span>
 			 <ul class="days">
-				<li class="digit" >1</li>
-				<li class="digit" >1</li>
-				<li class="digit" >2</li>
+				<li class="digit">1</li>
+				<li class="digit">1</li>
+				<li class="digit">2</li>
 			</ul> <span class="counter-note days">days,</span>
  			<ul class="hours">
-				<li class="digit" >0</li>
-				<li class="digit" >4</li>
+				<li class="digit">0</li>
+				<li class="digit">4</li>
 			</ul>
 			<span class="divider hours">:</span>
  			<ul class="minutes">
 				<li class="digit">3</li>
-				<li class="digit" >3</li>
+				<li class="digit">3</li>
 			</ul>
 			<span class="divider minutes">:</span>
 			<ul class="seconds">
 				<li class="digit">3</li>
-				<li class="digit" >3</li>
+				<li class="digit">3</li>
 			</ul>
 		</div>
 
@@ -87,7 +89,7 @@
 	  			<code><pre>
 &#60;<span class="code-tag">link</span> <span class="code-attribute">rel</span>=<span class="code-value">"stylesheet"</span> <span class="code-attribute">type</span>=<span class="code-value">"text/css"</span> <span class="code-attribute">href</span>=<span class="code-value">"counterStyle.css"</span>&#62;</pre>
 				</code>
-	  			After DOM:
+	  			After DOM (include counterStyle.css if you want it to look like first one on this page):
 				<code><pre>
 &#60;<span class="code-tag">script</span> <span class="code-attribute">src</span>=<span class="code-value">"mod.min.js"</span> <span class="code-attribute">type</span>=<span class="code-value">"text/javascript"</span>&#62;&#60;<span class="code-tag">/script</span>&#62;
 &#60;<span class="code-tag">script</span> <span class="code-attribute">src</span>=<span class="code-value">"counter.js"</span> <span class="code-attribute">type</span>=<span class="code-value">"text/javascript"</span>&#62;&#60;<span class="code-tag">/script</span>&#62;</pre>

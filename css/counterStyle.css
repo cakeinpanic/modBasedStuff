@@ -1,7 +1,5 @@
-
 .digit{
 	color: white;
-	
 	font-weight: 300;
 	font-size: 15px;
 	text-align: center;
@@ -15,9 +13,7 @@
 	background: -webkit-linear-gradient(bottom, rgb(49, 48, 48), rgb(32, 31, 31));
 	background: -moz-linear-gradient(bottom, rgb(49, 48, 48), rgb(32, 31, 31));
 	background: -o-linear-gradient(bottom, rgb(49, 48, 48), rgb(32, 31, 31));
-	
 	vertical-align: middle;
-
 	position: relative;
 	float: left;
 	width: 16px;
@@ -25,48 +21,7 @@
 	font-size: 16px;
 	line-height: 29px;
 	box-shadow: 0 0 5px rgba(0, 0, 0, .5);
-
 }
-.circle.counter
-{
-	color: rgb(80, 2, 2);
-	padding-bottom: 8px;
-	vertical-align: middle;
-	font-family: 'PT Mono';
-
-}
-.circle .digit
-{
-	border-radius: 15px;
-	width: 30px;
-	height:30px;
-	color: white;
-	font-size:20px;
-	box-shadow:none;
-	vertical-align: middle;
-	font-family: 'PT Mono';
-}
-.digit.red{
-	background: rgb(240, 82, 82);
-}
-.digit.blue{
-	background: rgb(35, 139, 221);
-}
-.digit.green{
-	background: rgb(169, 226, 124);
-}
-
-.circle .counter-date{
-	display:inline-block;
-	font-style: normal;
-	font-size: 18px;
-	margin-bottom: 0;
-	margin-right: 0;
-	line-height: 29px;
-	vertical-align: middle;
-	
-}
-
 .counter
 {
 	cursor: default;
@@ -75,9 +30,7 @@
 	margin:0 auto;
 	text-align: center;
 	margin-top:20px;
-
-	padding: 10px 0 	20px;
-
+	padding: 10px 0 20px;
 	background: rgba(216, 51, 51, 0.5);
 	border-radius: 10px;
 	
@@ -109,7 +62,6 @@
 	display:inline-block;
 	letter-spacing: 1px;
 }
-
 .divider {
 	padding-right: 2px;
 	width:1px;
@@ -118,9 +70,4 @@
 	font-weight: 700;
 	text-shadow:0 0 5px rgba(0, 0, 0, .8);
 }
-.counter-date
-{
-	display: block;
-	margin-bottom: 10px;
-	font-weight: 400;
-}
+
