@@ -1,8 +1,10 @@
 Here are some utilities based on <a href="https://github.com/dfcreative/mod/">dfcreative's mod</a>
 ##Slideshow
-<img src="http://cs617617.vk.me/v617617386/c42a/sdgS6xAbEus.jpg" width="400px"/><br>
+<img src="http://raw.githubusercontent.com/cakeinpanic/modBasedStuff/master/demo-img/slideshow.png" width="400px"/><br>
 [demo and documentation](http://cakeinpanic.github.io/modBasedStuff/slideshow.html)
-##Countdown
+##Counter
+<img src="http://raw.githubusercontent.com/cakeinpanic/modBasedStuff/master/demo-img/counter.png" width="400px"/><br>
 [demo and documentation](http://cakeinpanic.github.io/modBasedStuff/countdown.html)
 ##Image-rotator
+<img src="http://raw.githubusercontent.com/cakeinpanic/modBasedStuff/master/demo-img/rotator.png" width="400px"/><br>
 [demo and documentation](http://cakeinpanic.github.io/modBasedStuff/image-rotator.html)
